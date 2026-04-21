@@ -43,12 +43,6 @@ export const Route = createRootRoute({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Arix Marketing — Online zichtbaarheid vergroten" },
-      { name: "description", content: "Concept site" },
-      { property: "og:description", content: "Concept site" },
-      { name: "twitter:description", content: "Concept site" },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8ce56ca0-2d41-4911-a605-f3f694feb975/id-preview-7eb60eec--581ee0e1-7b40-4ead-b7c1-796c3ceb3b9e.lovable.app-1776770593487.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8ce56ca0-2d41-4911-a605-f3f694feb975/id-preview-7eb60eec--581ee0e1-7b40-4ead-b7c1-796c3ceb3b9e.lovable.app-1776770593487.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
