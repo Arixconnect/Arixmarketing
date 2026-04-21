@@ -25,7 +25,6 @@ import p1 from "@/assets/portfolio-1.jpg";
 import p2 from "@/assets/portfolio-2.jpg";
 import p3 from "@/assets/portfolio-3.jpg";
 import p4 from "@/assets/portfolio-4.jpg";
-import logoImg from "@/assets/arix-logo.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -50,30 +49,27 @@ function SlideTag({ n, label }: { n: string; label: string }) {
 
 function Nav() {
   return (
-    <header className="fixed left-0 right-0 top-0 z-50">
-      <div className="mx-auto flex max-w-[1500px] items-start justify-between px-6 py-5 md:px-10">
-        <nav className="mt-4 hidden items-center gap-8 rounded-full border border-border/40 bg-background/60 px-6 py-3 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground backdrop-blur-xl md:flex">
+    <header className="fixed left-0 right-0 top-0 z-50 border-b border-border/40 bg-background/70 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4 md:px-10">
+        <a href="#top" className="flex items-center gap-2">
+          <span className="font-display text-2xl font-black tracking-tight text-foreground">
+            ARIX
+          </span>
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-gold">
+            ★ marketing
+          </span>
+        </a>
+        <nav className="hidden items-center gap-8 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground md:flex">
           <a href="#services" className="transition hover:text-gold">Services</a>
           <a href="#strategy" className="transition hover:text-gold">Strategie</a>
-          <a href="#pricing" className="transition hover:text-gold">Tarieven</a>
-          <a href="#work" className="transition hover:text-gold">Werk</a>
-          <a
-            href="mailto:info@arixmarketing.nl"
-            className="inline-flex items-center gap-2 text-gold transition hover:opacity-80"
-          >
-            Contact <ArrowUpRight className="h-3.5 w-3.5" />
-          </a>
+          <a href="#pricing" className="transition hover:text-gold">Pricing</a>
+          <a href="#work" className="transition hover:text-gold">Work</a>
         </nav>
-        <div className="md:hidden" />
-        <a href="#top" className="group relative ml-auto block">
-          <div className="absolute -inset-3 rounded-full bg-gold/20 opacity-0 blur-xl transition group-hover:opacity-100" />
-          <img
-            src={logoImg}
-            alt="Arix Marketing logo"
-            width={96}
-            height={96}
-            className="relative h-20 w-20 rounded-full border border-gold/40 bg-background/80 object-contain p-1 backdrop-blur-xl md:h-24 md:w-24"
-          />
+        <a
+          href="mailto:info@arixmarketing.nl"
+          className="inline-flex items-center gap-2 rounded-full border border-gold bg-gold/10 px-4 py-2 text-xs font-medium uppercase tracking-wider text-gold transition hover:bg-gold hover:text-primary-foreground"
+        >
+          Contact <ArrowUpRight className="h-3.5 w-3.5" />
         </a>
       </div>
     </header>
