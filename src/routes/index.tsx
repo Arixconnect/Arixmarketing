@@ -53,7 +53,7 @@ function Nav() {
     <header className="fixed left-0 right-0 top-0 z-50">
       <div className="mx-auto flex max-w-[1500px] items-start justify-between px-6 py-5 md:px-10">
         <nav className="mt-4 hidden items-center gap-8 rounded-full border border-border/40 bg-background/60 px-6 py-3 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground backdrop-blur-xl md:flex">
-          <a href="#services" className="transition hover:text-gold">Services</a>
+          <a href="#services" className="transition hover:text-gold">Diensten</a>
           <a href="#strategy" className="transition hover:text-gold">Strategie</a>
           <a href="#pricing" className="transition hover:text-gold">Tarieven</a>
           <a href="#work" className="transition hover:text-gold">Werk</a>
@@ -173,7 +173,7 @@ function Hero() {
             <div className="mt-4 flex items-baseline justify-between">
               <span className="font-display text-4xl font-bold text-foreground">+342%</span>
               <span className="font-mono text-[10px] uppercase tracking-wider text-gold">
-                YoY reach
+                BEREIK GEGENEREERD
               </span>
             </div>
           </motion.div>
@@ -224,7 +224,7 @@ function WhatWeDo() {
   return (
     <section className="relative mx-auto max-w-[1400px] px-6 py-32 md:px-10">
       <motion.div {...fadeUp} className="mb-16">
-        <SlideTag n="02 / 10" label="What we do" />
+        <SlideTag n="02 / 10" label="Wat doen we?" />
       </motion.div>
 
       <div className="grid grid-cols-12 gap-6">
@@ -243,9 +243,9 @@ function WhatWeDo() {
           className="col-span-12 flex flex-col justify-end gap-8 md:col-span-5"
         >
           <p className="text-lg leading-relaxed text-muted-foreground">
-            In een wereld vol noise, bouwen wij signal. Van eerste post tot
-            conversie — een strategie die past bij jouw merk, jouw doelgroep en
-            jouw ambities.
+            In een wereld vol prikkels en geluid, bouwen wij aan overzicht en
+            consistentie. Van eerste post tot conversie — een strategie die past
+            bij jouw merk, jouw doelgroep en jouw ambities.
           </p>
 
           <div className="grid grid-cols-3 gap-3">
@@ -281,13 +281,13 @@ const services = [
   {
     icon: Camera,
     title: "Content Creation",
-    desc: "Cinematic photo & video shoots. Scroll-stoppende creatives die converteren.",
+    desc: "Cinematische foto & video shoots. Scroll-stoppende creatives die converteren.",
     n: "02",
   },
   {
     icon: Megaphone,
     title: "Social Ads",
-    desc: "Meta, TikTok & LinkedIn campaigns met focus op meetbare ROAS.",
+    desc: "Meta, TikTok & LinkedIn campagnes met focus op meetbare ROAS.",
     n: "03",
   },
   {
@@ -310,7 +310,7 @@ function Services() {
       <div className="mx-auto max-w-[1400px] px-6 py-32 md:px-10">
         <motion.div {...fadeUp} className="mb-16 flex items-end justify-between">
           <div>
-            <SlideTag n="03 / 10" label="Services" />
+            <SlideTag n="03 / 10" label="DIENSTEN" />
             <h2 className="mt-6 font-display text-6xl font-black leading-none tracking-tighter md:text-7xl">
               Wat wij <span className="italic gold-gradient-text">leveren</span>
             </h2>
@@ -369,7 +369,7 @@ function Benefits() {
   return (
     <section className="relative mx-auto max-w-[1400px] px-6 py-32 md:px-10">
       <motion.div {...fadeUp} className="mb-16">
-        <SlideTag n="04 / 10" label="Why Arix" />
+        <SlideTag n="04 / 10" label="Waarom Arix Marketing" />
         <h2 className="mt-6 font-display text-6xl font-black leading-none tracking-tighter md:text-7xl">
           De <span className="italic gold-gradient-text">voordelen</span>
         </h2>
@@ -422,7 +422,7 @@ function Strategy() {
       <div className="mx-auto max-w-[1400px] px-6 py-32 md:px-10">
         <div className="grid grid-cols-12 gap-10">
           <motion.div {...fadeUp} className="col-span-12 md:col-span-5">
-            <SlideTag n="05 / 10" label="Strategy" />
+            <SlideTag n="05 / 10" label="Strategie" />
             <h2 className="mt-6 font-display text-6xl font-black leading-[0.95] tracking-tighter md:text-7xl">
               De juiste <br />
               <span className="italic gold-gradient-text">vragen</span> <br />
@@ -527,7 +527,7 @@ function Pricing() {
   return (
     <section id="pricing" className="relative mx-auto max-w-[1400px] px-6 py-32 md:px-10">
       <motion.div {...fadeUp} className="mb-16">
-        <SlideTag n="06 / 10" label="Pricing — Social" />
+        <SlideTag n="06 / 10" label="TARIEVEN SOCIAL MEDIA" />
         <h2 className="mt-6 font-display text-6xl font-black leading-none tracking-tighter md:text-7xl">
           Social media <span className="italic gold-gradient-text">pakketten</span>
         </h2>
@@ -539,7 +539,7 @@ function Pricing() {
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
         <PricingCard
           name="Test traject"
-          price="€150"
+          price="€350"
           badge="Try"
           features={[
             "1 post per week",
@@ -560,7 +560,7 @@ function Pricing() {
         />
         <PricingCard
           name="Growth"
-          price="€1050"
+          price="€1450"
           highlight
           badge="Most popular"
           features={[
@@ -568,18 +568,18 @@ function Pricing() {
             "2 content shoots / mnd",
             "Reels & video editing",
             "Strategie sessie",
-            "Premium reporting",
+            "Premium report",
           ]}
         />
         <PricingCard
           name="Premium"
           price="€2300"
           features={[
-            "Daily posting",
+            "Dagelijks posten",
             "Wekelijkse shoots",
             "Volledige creatieve directie",
-            "Ads management included",
-            "Dedicated account manager",
+            "Ads management inclusief",
+            "Vaste gedreven contactpersoon",
           ]}
         />
       </div>
@@ -587,7 +587,7 @@ function Pricing() {
       {/* Add-ons */}
       <div className="mt-20 grid grid-cols-1 gap-10 lg:grid-cols-2">
         <motion.div {...fadeUp}>
-          <SlideTag n="07 / 10" label="Website" />
+          <SlideTag n="07 / 10" label="TARIEVEN WEBSITE" />
           <h3 className="mt-6 font-display text-4xl font-black tracking-tighter md:text-5xl">
             Website <span className="italic gold-gradient-text">design</span>
           </h3>
@@ -595,7 +595,7 @@ function Pricing() {
             {[
               { p: "€350", t: "Landing page", d: "1 pagina, mobile first" },
               { p: "€550", t: "Business site", d: "Tot 5 pagina's, CMS" },
-              { p: "€1050", t: "Premium build", d: "Custom design + animaties" },
+              { p: "v.a €1050", t: "Premium build", d: "Custom design + animaties" },
             ].map((w) => (
               <div
                 key={w.p}
@@ -614,9 +614,9 @@ function Pricing() {
         </motion.div>
 
         <motion.div {...fadeUp} transition={{ duration: 0.8, delay: 0.15 }}>
-          <SlideTag n="08 / 10" label="AI Search" />
+          <SlideTag n="08 / 10" label="AI ZOEKMACHINE OPTIMALISATIE" />
           <h3 className="mt-6 font-display text-4xl font-black tracking-tighter md:text-5xl">
-            AI Search <span className="italic gold-gradient-text">Optimization</span>
+            AI Zoekmachine <span className="italic gold-gradient-text">Optimimalisatie</span>
           </h3>
           <div className="mt-8 flex h-[calc(100%-7rem)] flex-col justify-between rounded-sm border border-gold bg-gradient-to-br from-gold/15 via-card to-card p-8 glow-gold">
             <div>
@@ -629,7 +629,7 @@ function Pricing() {
             <div className="mt-8 flex items-end justify-between">
               <div>
                 <div className="font-display text-6xl font-black tracking-tighter md:text-7xl">
-                  €1000
+                  €1000,-
                 </div>
                 <div className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
                   per maand
@@ -639,7 +639,7 @@ function Pricing() {
                 href="mailto:info@arixmarketing.nl"
                 className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-3 text-xs font-semibold uppercase tracking-wider text-primary-foreground transition hover:opacity-90"
               >
-                Activate <ArrowUpRight className="h-3.5 w-3.5" />
+                ACTIVEER <ArrowUpRight className="h-3.5 w-3.5" />
               </a>
             </div>
           </div>
@@ -652,8 +652,8 @@ function Pricing() {
 function Work() {
   const items = [
     { src: p1, label: "Social post", tag: "@luxe.studio", span: "md:col-span-5 md:row-span-2" },
-    { src: p2, label: "Behind the scenes", tag: "Production", span: "md:col-span-4" },
-    { src: p3, label: "Content creation", tag: "Reels", span: "md:col-span-3" },
+    { src: p2, label: "Behind the scenes", tag: "Productie", span: "md:col-span-4" },
+    { src: p3, label: "Content creatie", tag: "Reels", span: "md:col-span-3" },
     { src: p4, label: "Product shoot", tag: "Editorial", span: "md:col-span-7" },
   ];
   return (
@@ -712,7 +712,7 @@ function CTA() {
       />
       <div className="relative mx-auto max-w-[1400px] px-6 py-40 text-center md:px-10">
         <motion.div {...fadeUp}>
-          <SlideTag n="10 / 10" label="Let's talk" />
+          <SlideTag n="10 / 10" label="Laten we connecten" />
         </motion.div>
         <motion.h2
           {...fadeUp}
@@ -736,7 +736,7 @@ function CTA() {
             <ArrowUpRight className="h-5 w-5 transition-transform group-hover:rotate-45" />
           </a>
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
-            We reply within 24 hours
+            ​We reageren binnen 48 uur
           </p>
         </motion.div>
       </div>
@@ -750,7 +750,7 @@ function CTA() {
             </span>
           </div>
           <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-            © {new Date().getFullYear()} Arix Marketing — Built with care
+            © {new Date().getFullYear()} Arix Marketing — gebouwd om te blijven
           </div>
           <div className="flex gap-4 text-muted-foreground">
             <Instagram className="h-4 w-4 transition hover:text-gold" />
