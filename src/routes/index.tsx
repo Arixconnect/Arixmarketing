@@ -539,7 +539,7 @@ function Pricing() {
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
         <PricingCard
           name="Test traject"
-          price="€350"
+          price="€999,-"
           badge="Try"
           features={[
             "1 post per week",
