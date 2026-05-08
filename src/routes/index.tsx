@@ -562,16 +562,13 @@ function Pricing() {
           name="Content Shoot"
           price="€650"
           priceSuffix="eenmalig"
-          intro="Voor bedrijven die professionele content willen laten maken zonder volledig social media management."
+          intro="Professionele content zonder vast management."
           features={[
             "6 foto- of videoposts",
-            "Content geschoten op locatie",
-            "Professioneel gemonteerd en bewerkt",
-            "Geschikt voor social media gebruik",
-            "Mix van video, fotografie en branding visuals",
-            "Gericht op organische zichtbaarheid en uitstraling",
+            "Shoot op locatie",
+            "Professioneel gemonteerd",
+            "Klaar voor social media",
           ]}
-          footnote="Ideaal voor wie zelfstandig post, maar kwalitatieve content wil inzetten."
         />
         <PricingCard
           icon="⭐"
@@ -580,37 +577,29 @@ function Pricing() {
           priceSuffix="per maand"
           highlight
           badge="Meest gekozen"
-          intro="Voor bedrijven die professioneel zichtbaar willen groeien met een consistente online uitstraling."
+          intro="Consistent zichtbaar groeien met een complete aanpak."
           features={[
-            "6 foto- of videoposts per maand",
+            "6 posts per maand",
             "1 content shoot per maand",
-            "Posten op max. 3 platformen",
+            "Tot 3 platformen",
             "Community management",
-            "Contentplanning & strategie",
-            "Brainstormsessies",
-            "Statistieken & maandelijkse analyse",
-            "Consistente branding en feed-opbouw",
-            "Organisch bereik onder relevante doelgroepen",
-            "Ondersteuning bij vacatures & werving",
+            "Strategie & maandelijkse analyse",
+            "Ondersteuning bij werving",
           ]}
-          footnote="Extra platform: €250 / mnd · Advertentiebudget niet inbegrepen"
         />
         <PricingCard
           icon="👑"
           name="Signature"
           price="€3000"
           priceSuffix="per maand · beperkt beschikbaar"
-          intro="Voor bedrijven die social media structureel willen inzetten voor branding, zichtbaarheid en langdurige groei."
+          intro="Structurele groei in branding en zichtbaarheid."
           features={[
             "Dagelijks posten",
             "Wekelijkse content shoots",
-            "Mix van video, fotografie, carousels & branding visuals",
+            "Video, foto, carousels & branding",
             "Prioriteit support",
-            "Contentstrategie & creatieve begeleiding",
-            "Community management & brainstormsessies",
-            "Uitgebreide statistieken & analyse",
-            "Google zichtbaarheid ondersteuning",
-            "Snelle content verwerking",
+            "Google zichtbaarheid",
+            "Snelle verwerking",
           ]}
         />
       </div>
@@ -627,7 +616,7 @@ function Pricing() {
               <span className="font-display text-3xl font-black text-gold">v.a €1200</span>
             </div>
             <p className="mt-4 max-w-md text-sm text-muted-foreground">
-              Voor bedrijven die via social media gericht personeel willen aantrekken.
+              Gericht personeel aantrekken via social media.
             </p>
             <ul className="mt-6 grid grid-cols-1 gap-2 text-sm text-muted-foreground sm:grid-cols-2">
               {[
@@ -643,9 +632,6 @@ function Pricing() {
               ))}
             </ul>
           </div>
-          <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-            Advertentiebudget niet inbegrepen
-          </p>
         </motion.div>
 
         <motion.div
@@ -661,8 +647,7 @@ function Pricing() {
               </span>
             </div>
             <p className="mt-4 max-w-md text-sm text-muted-foreground">
-              Voor bedrijven met specifieke wensen, extra contentbehoefte of aanvullende
-              marketingondersteuning. Neem contact op voor een voorstel op maat.
+              Specifieke wensen of extra contentbehoefte? Wij maken een voorstel op maat.
             </p>
           </div>
           <a
@@ -673,6 +658,10 @@ function Pricing() {
           </a>
         </motion.div>
       </div>
+
+      <p className="mt-6 text-center font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground/60">
+        Advertentiebudget niet inbegrepen
+      </p>
 
       {/* Add-ons */}
       <div className="mt-20 grid grid-cols-1 gap-10 lg:grid-cols-2">
