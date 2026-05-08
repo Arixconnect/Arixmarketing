@@ -463,23 +463,31 @@ function Strategy() {
 
 function PricingCard({
   price,
+  priceSuffix,
   name,
+  intro,
   features,
+  footnote,
   highlight,
   badge,
+  icon,
 }: {
   price: string;
+  priceSuffix?: string;
   name: string;
+  intro?: string;
   features: string[];
+  footnote?: string;
   highlight?: boolean;
   badge?: string;
+  icon?: string;
 }) {
   return (
     <motion.div
       {...fadeUp}
       className={`relative flex flex-col rounded-sm border p-8 ${
         highlight
-          ? "border-gold bg-gradient-to-b from-gold/15 to-transparent glow-gold"
+          ? "border-gold bg-gradient-to-b from-gold/15 to-transparent glow-gold lg:scale-[1.03]"
           : "border-border bg-card"
       }`}
     >
@@ -488,18 +496,24 @@ function PricingCard({
           {badge}
         </span>
       )}
-      <div className="mb-6 flex items-baseline justify-between">
+      <div className="mb-5 flex items-center justify-between">
         <h3 className={`font-display text-xl font-medium ${highlight ? "text-gold" : ""}`}>
           {name}
         </h3>
+        {icon && <span className="text-2xl leading-none">{icon}</span>}
       </div>
+      {intro && (
+        <p className="mb-6 text-sm leading-relaxed text-muted-foreground">{intro}</p>
+      )}
       <div className="mb-8">
         <div className="font-display text-5xl font-black tracking-tighter md:text-6xl">
           {price}
         </div>
-        <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-          per maand
-        </div>
+        {priceSuffix && (
+          <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+            {priceSuffix}
+          </div>
+        )}
       </div>
       <ul className="mb-8 flex-1 space-y-3">
         {features.map((f) => (
@@ -509,6 +523,11 @@ function PricingCard({
           </li>
         ))}
       </ul>
+      {footnote && (
+        <p className="mb-6 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+          {footnote}
+        </p>
+      )}
       <a
         href="mailto:info@arixmarketing.nl"
         className={`inline-flex items-center justify-center gap-2 rounded-sm px-4 py-3 text-sm font-medium uppercase tracking-wider transition ${
@@ -532,56 +551,126 @@ function Pricing() {
           Social media <span className="italic gold-gradient-text">pakketten</span>
         </h2>
         <p className="mt-6 max-w-xl text-muted-foreground">
-          €3000
+          Drie heldere pakketten. Eén doel: jouw merk laten groeien met content die werkt.
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 items-stretch gap-6 lg:grid-cols-3">
         <PricingCard
-          name="Test traject"
-          price="€999,-"
-          badge="Try"
+          icon="🎥"
+          name="Content Shoot"
+          price="€650"
+          priceSuffix="eenmalig"
+          intro="Voor bedrijven die professionele content willen laten maken zonder volledig social media management."
           features={[
-            "1 post per week",
-            "1 maandelijkse phone shoot",
-            "Basis analytics",
-            "Ideaal om te proeven",
+            "6 foto- of videoposts",
+            "Content geschoten op locatie",
+            "Professioneel gemonteerd en bewerkt",
+            "Geschikt voor social media gebruik",
+            "Mix van video, fotografie en branding visuals",
+            "Gericht op organische zichtbaarheid en uitstraling",
           ]}
+          footnote="Ideaal voor wie zelfstandig post, maar kwalitatieve content wil inzetten."
         />
         <PricingCard
-          name="Starter"
-          price="€750"
-          features={[
-            "3 posts per week",
-            "Maandelijkse content shoot",
-            "Community management",
-            "Maandelijks rapport",
-          ]}
-        />
-        <PricingCard
-          name="Growth"
-          price="€1450"
+          icon="⭐"
+          name="Social Media Management"
+          price="€850"
+          priceSuffix="per maand"
           highlight
-          badge="Most popular"
+          badge="Meest gekozen"
+          intro="Voor bedrijven die professioneel zichtbaar willen groeien met een consistente online uitstraling."
           features={[
-            "5 posts per week",
-            "2 content shoots / mnd",
-            "Reels & video editing",
-            "Strategie sessie",
-            "Premium report",
+            "6 foto- of videoposts per maand",
+            "1 content shoot per maand",
+            "Posten op max. 3 platformen",
+            "Community management",
+            "Contentplanning & strategie",
+            "Brainstormsessies",
+            "Statistieken & maandelijkse analyse",
+            "Consistente branding en feed-opbouw",
+            "Organisch bereik onder relevante doelgroepen",
+            "Ondersteuning bij vacatures & werving",
           ]}
+          footnote="Extra platform: €250 / mnd · Advertentiebudget niet inbegrepen"
         />
         <PricingCard
-          name="Premium"
-          price="€2300"
+          icon="👑"
+          name="Signature"
+          price="€3000"
+          priceSuffix="per maand · beperkt beschikbaar"
+          intro="Voor bedrijven die social media structureel willen inzetten voor branding, zichtbaarheid en langdurige groei."
           features={[
             "Dagelijks posten",
-            "Wekelijkse shoots",
-            "Volledige creatieve directie",
-            "Ads management inclusief",
-            "Vaste gedreven contactpersoon",
+            "Wekelijkse content shoots",
+            "Mix van video, fotografie, carousels & branding visuals",
+            "Prioriteit support",
+            "Contentstrategie & creatieve begeleiding",
+            "Community management & brainstormsessies",
+            "Uitgebreide statistieken & analyse",
+            "Google zichtbaarheid ondersteuning",
+            "Snelle content verwerking",
           ]}
         />
+      </div>
+
+      {/* Secondary offers */}
+      <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+        <motion.div
+          {...fadeUp}
+          className="flex flex-col justify-between rounded-sm border border-border bg-card p-8 transition hover:border-gold"
+        >
+          <div>
+            <div className="flex items-center justify-between">
+              <h3 className="font-display text-2xl font-semibold">🚀 Wervingscampagnes</h3>
+              <span className="font-display text-3xl font-black text-gold">v.a €1200</span>
+            </div>
+            <p className="mt-4 max-w-md text-sm text-muted-foreground">
+              Voor bedrijven die via social media gericht personeel willen aantrekken.
+            </p>
+            <ul className="mt-6 grid grid-cols-1 gap-2 text-sm text-muted-foreground sm:grid-cols-2">
+              {[
+                "Wervingslandingpagina",
+                "Social media content",
+                "Campagne strategie",
+                "Bereik onder werkzoekenden",
+              ].map((f) => (
+                <li key={f} className="flex items-start gap-2">
+                  <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold" />
+                  <span>{f}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+            Advertentiebudget niet inbegrepen
+          </p>
+        </motion.div>
+
+        <motion.div
+          {...fadeUp}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="flex flex-col justify-between rounded-sm border border-gold/40 bg-gradient-to-br from-gold/10 via-card to-card p-8"
+        >
+          <div>
+            <div className="flex items-center justify-between">
+              <h3 className="font-display text-2xl font-semibold text-gold">✨ Pakket op maat</h3>
+              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                Op aanvraag
+              </span>
+            </div>
+            <p className="mt-4 max-w-md text-sm text-muted-foreground">
+              Voor bedrijven met specifieke wensen, extra contentbehoefte of aanvullende
+              marketingondersteuning. Neem contact op voor een voorstel op maat.
+            </p>
+          </div>
+          <a
+            href="mailto:info@arixmarketing.nl"
+            className="mt-6 inline-flex items-center gap-2 self-start rounded-full bg-gold px-5 py-3 text-xs font-semibold uppercase tracking-wider text-primary-foreground transition hover:opacity-90"
+          >
+            Vraag voorstel aan <ArrowUpRight className="h-3.5 w-3.5" />
+          </a>
+        </motion.div>
       </div>
 
       {/* Add-ons */}
@@ -593,12 +682,12 @@ function Pricing() {
           </h3>
           <div className="mt-8 space-y-3">
             {[
-              { p: "€350", t: "Landing page", d: "1 pagina, mobile first" },
-              { p: "€550", t: "Business site", d: "Tot 5 pagina's, CMS" },
-              { p: "v.a €1050", t: "Premium build", d: "Custom design + animaties" },
+              { p: "€550", t: "Landing page", d: "Eenmalig · 1 pagina, mobile first" },
+              { p: "v.a €1200", t: "Business website", d: "Meerdere pagina's, CMS" },
+              { p: "Op aanvraag", t: "Maatwerk website", d: "Custom design + animaties" },
             ].map((w) => (
               <div
-                key={w.p}
+                key={w.t}
                 className="flex items-center justify-between rounded-sm border border-border bg-card p-5 transition hover:border-gold"
               >
                 <div>
@@ -607,7 +696,7 @@ function Pricing() {
                     {w.d}
                   </div>
                 </div>
-                <div className="font-display text-3xl font-black text-gold">{w.p}</div>
+                <div className="font-display text-2xl font-black text-gold md:text-3xl">{w.p}</div>
               </div>
             ))}
           </div>
@@ -616,7 +705,7 @@ function Pricing() {
         <motion.div {...fadeUp} transition={{ duration: 0.8, delay: 0.15 }}>
           <SlideTag n="08 / 10" label="AI ZOEKMACHINE OPTIMALISATIE" />
           <h3 className="mt-6 font-display text-4xl font-black tracking-tighter md:text-5xl">
-            AI Zoekmachine <span className="italic gold-gradient-text">Optimimalisatie</span>
+            AI Zoekmachine <span className="italic gold-gradient-text">Optimalisatie</span>
           </h3>
           <div className="mt-8 flex h-[calc(100%-7rem)] flex-col justify-between rounded-sm border border-gold bg-gradient-to-br from-gold/15 via-card to-card p-8 glow-gold">
             <div>
