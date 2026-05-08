@@ -21,10 +21,11 @@ import {
   Layers,
 } from "lucide-react";
 import heroImg from "@/assets/hero-abstract.jpg";
-import p1 from "@/assets/portfolio-1.jpg";
-import p2 from "@/assets/portfolio-2.jpg";
-import p3 from "@/assets/portfolio-3.jpg";
-import p4 from "@/assets/portfolio-4.jpg";
+import workBroodje from "@/assets/work-broodje.jpg";
+import workIchiba from "@/assets/work-ichiba.jpg";
+import workBarber from "@/assets/work-barber.jpg";
+import workStudiekunst from "@/assets/work-studiekunst.jpg";
+import workGsm from "@/assets/work-gsm.jpg";
 import logoImg from "@/assets/arix-logo.png";
 
 export const Route = createFileRoute("/")({
@@ -561,16 +562,13 @@ function Pricing() {
           name="Content Shoot"
           price="€650"
           priceSuffix="eenmalig"
-          intro="Voor bedrijven die professionele content willen laten maken zonder volledig social media management."
+          intro="Professionele content zonder vast management."
           features={[
             "6 foto- of videoposts",
-            "Content geschoten op locatie",
-            "Professioneel gemonteerd en bewerkt",
-            "Geschikt voor social media gebruik",
-            "Mix van video, fotografie en branding visuals",
-            "Gericht op organische zichtbaarheid en uitstraling",
+            "Shoot op locatie",
+            "Professioneel gemonteerd",
+            "Klaar voor social media",
           ]}
-          footnote="Ideaal voor wie zelfstandig post, maar kwalitatieve content wil inzetten."
         />
         <PricingCard
           icon="⭐"
@@ -579,37 +577,29 @@ function Pricing() {
           priceSuffix="per maand"
           highlight
           badge="Meest gekozen"
-          intro="Voor bedrijven die professioneel zichtbaar willen groeien met een consistente online uitstraling."
+          intro="Consistent zichtbaar groeien met een complete aanpak."
           features={[
-            "6 foto- of videoposts per maand",
+            "6 posts per maand",
             "1 content shoot per maand",
-            "Posten op max. 3 platformen",
+            "Tot 3 platformen",
             "Community management",
-            "Contentplanning & strategie",
-            "Brainstormsessies",
-            "Statistieken & maandelijkse analyse",
-            "Consistente branding en feed-opbouw",
-            "Organisch bereik onder relevante doelgroepen",
-            "Ondersteuning bij vacatures & werving",
+            "Strategie & maandelijkse analyse",
+            "Ondersteuning bij werving",
           ]}
-          footnote="Extra platform: €250 / mnd · Advertentiebudget niet inbegrepen"
         />
         <PricingCard
           icon="👑"
           name="Signature"
           price="€3000"
           priceSuffix="per maand · beperkt beschikbaar"
-          intro="Voor bedrijven die social media structureel willen inzetten voor branding, zichtbaarheid en langdurige groei."
+          intro="Structurele groei in branding en zichtbaarheid."
           features={[
             "Dagelijks posten",
             "Wekelijkse content shoots",
-            "Mix van video, fotografie, carousels & branding visuals",
+            "Video, foto, carousels & branding",
             "Prioriteit support",
-            "Contentstrategie & creatieve begeleiding",
-            "Community management & brainstormsessies",
-            "Uitgebreide statistieken & analyse",
-            "Google zichtbaarheid ondersteuning",
-            "Snelle content verwerking",
+            "Google zichtbaarheid",
+            "Snelle verwerking",
           ]}
         />
       </div>
@@ -626,7 +616,7 @@ function Pricing() {
               <span className="font-display text-3xl font-black text-gold">v.a €1200</span>
             </div>
             <p className="mt-4 max-w-md text-sm text-muted-foreground">
-              Voor bedrijven die via social media gericht personeel willen aantrekken.
+              Gericht personeel aantrekken via social media.
             </p>
             <ul className="mt-6 grid grid-cols-1 gap-2 text-sm text-muted-foreground sm:grid-cols-2">
               {[
@@ -642,9 +632,6 @@ function Pricing() {
               ))}
             </ul>
           </div>
-          <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-            Advertentiebudget niet inbegrepen
-          </p>
         </motion.div>
 
         <motion.div
@@ -660,8 +647,7 @@ function Pricing() {
               </span>
             </div>
             <p className="mt-4 max-w-md text-sm text-muted-foreground">
-              Voor bedrijven met specifieke wensen, extra contentbehoefte of aanvullende
-              marketingondersteuning. Neem contact op voor een voorstel op maat.
+              Specifieke wensen of extra contentbehoefte? Wij maken een voorstel op maat.
             </p>
           </div>
           <a
@@ -672,6 +658,10 @@ function Pricing() {
           </a>
         </motion.div>
       </div>
+
+      <p className="mt-6 text-center font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground/60">
+        Advertentiebudget niet inbegrepen
+      </p>
 
       {/* Add-ons */}
       <div className="mt-20 grid grid-cols-1 gap-10 lg:grid-cols-2">
@@ -740,10 +730,46 @@ function Pricing() {
 
 function Work() {
   const items = [
-    { src: p1, label: "Social post", tag: "@luxe.studio", span: "md:col-span-5 md:row-span-2" },
-    { src: p2, label: "Behind the scenes", tag: "Productie", span: "md:col-span-4" },
-    { src: p3, label: "Content creatie", tag: "Reels", span: "md:col-span-3" },
-    { src: p4, label: "Product shoot", tag: "Editorial", span: "md:col-span-7" },
+    {
+      src: workBroodje,
+      title: "Broodje & Co Arnhem",
+      label: "Social growth",
+      text: "Van 300 naar 10.000 volgers.",
+      span: "md:col-span-7 md:row-span-2",
+    },
+    {
+      src: workIchiba,
+      title: "Ichiba Arnhem",
+      label: "Branding & fotografie",
+      text: "Sterke visuals voor social media zichtbaarheid.",
+      span: "md:col-span-5",
+    },
+    {
+      src: workBarber,
+      title: "Masterbarbershop Arnhem",
+      label: "Website & zichtbaarheid",
+      text: "Online uitstraling en lokale zichtbaarheid.",
+      span: "md:col-span-5",
+    },
+    {
+      src: workStudiekunst,
+      title: "Studiekunst",
+      label: "Branding & website",
+      text: "Creatieve online presentatie.",
+      span: "md:col-span-6",
+    },
+    {
+      src: workGsm,
+      title: "GSM Reparatie Arnhem",
+      label: "Lokale groei",
+      text: "Sterke lokale zichtbaarheid via social media.",
+      span: "md:col-span-6",
+    },
+  ];
+  const references = [
+    "Gemeente Arnhem × Rijnstad",
+    "Rockbrands × Kempi & Josylvio",
+    "Maximum Performance",
   ];
   return (
     <section id="work" className="relative border-y border-border bg-card/30">
@@ -758,35 +784,58 @@ function Work() {
           <Youtube className="hidden h-10 w-10 text-gold md:block" strokeWidth={1.2} />
         </motion.div>
 
-        <div className="grid auto-rows-[260px] grid-cols-1 gap-4 md:grid-cols-12">
+        <div className="grid auto-rows-[260px] grid-cols-1 gap-4 md:grid-cols-12 md:auto-rows-[300px]">
           {items.map((it, i) => (
             <motion.div
               key={i}
               {...fadeUp}
-              transition={{ duration: 0.8, delay: i * 0.1 }}
+              transition={{ duration: 0.8, delay: i * 0.08 }}
               className={`group relative col-span-1 overflow-hidden rounded-sm border border-border ${it.span}`}
             >
               <img
                 src={it.src}
-                alt={it.label}
+                alt={it.title}
                 loading="lazy"
                 width={1024}
                 height={1280}
                 className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-5">
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6">
                 <div>
-                  <div className="font-display text-xl font-semibold">{it.label}</div>
                   <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-gold">
-                    {it.tag}
+                    {it.label}
+                  </div>
+                  <div className="mt-1 font-display text-2xl font-semibold leading-tight">
+                    {it.title}
+                  </div>
+                  <div className="mt-1 max-w-xs text-sm text-muted-foreground">
+                    {it.text}
                   </div>
                 </div>
-                <ArrowUpRight className="h-5 w-5 text-gold transition group-hover:rotate-45" />
+                <ArrowUpRight className="h-5 w-5 flex-shrink-0 text-gold transition group-hover:rotate-45" />
               </div>
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          {...fadeUp}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-border/60 pt-8"
+        >
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+            Ook gewerkt met
+          </span>
+          {references.map((r) => (
+            <span
+              key={r}
+              className="font-mono text-[11px] uppercase tracking-[0.2em] text-foreground/70"
+            >
+              {r}
+            </span>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
