@@ -486,58 +486,58 @@ function PricingCard({
   return (
     <motion.div
       {...fadeUp}
-      className={`relative flex flex-col rounded-sm border p-8 ${
+      className={`relative flex flex-col rounded-sm border p-5 ${
         highlight
-          ? "border-gold bg-gradient-to-b from-gold/15 to-transparent glow-gold lg:scale-[1.03]"
+          ? "border-gold bg-gradient-to-b from-gold/15 to-transparent glow-gold lg:scale-[1.02]"
           : "border-border bg-card"
       }`}
     >
       {badge && (
-        <span className="absolute -top-3 left-8 rounded-full bg-gold px-3 py-1 font-mono text-[10px] font-semibold uppercase tracking-wider text-primary-foreground">
+        <span className="absolute -top-2.5 left-5 rounded-full bg-gold px-2.5 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-wider text-primary-foreground">
           {badge}
         </span>
       )}
-      <div className="mb-5 flex items-center justify-between">
-        <h3 className={`font-display text-xl font-medium ${highlight ? "text-gold" : ""}`}>
+      <div className="mb-2 flex items-center justify-between">
+        <h3 className={`font-display text-base font-medium ${highlight ? "text-gold" : ""}`}>
           {name}
         </h3>
-        {icon && <span className="text-2xl leading-none">{icon}</span>}
+        {icon && <span className="text-lg leading-none">{icon}</span>}
       </div>
       {intro && (
-        <p className="mb-6 text-sm leading-relaxed text-muted-foreground">{intro}</p>
+        <p className="mb-3 text-xs leading-snug text-muted-foreground">{intro}</p>
       )}
-      <div className="mb-8">
-        <div className="font-display text-5xl font-black tracking-tighter md:text-6xl">
+      <div className="mb-4">
+        <div className="font-display text-3xl font-black tracking-tighter md:text-4xl">
           {price}
         </div>
         {priceSuffix && (
-          <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+          <div className="mt-0.5 font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground">
             {priceSuffix}
           </div>
         )}
       </div>
-      <ul className="mb-8 flex-1 space-y-3">
+      <ul className="mb-4 flex-1 space-y-1.5">
         {features.map((f) => (
-          <li key={f} className="flex items-start gap-3 text-sm text-muted-foreground">
-            <Check className={`mt-0.5 h-4 w-4 flex-shrink-0 ${highlight ? "text-gold" : "text-foreground"}`} />
+          <li key={f} className="flex items-start gap-2 text-xs text-muted-foreground">
+            <Check className={`mt-0.5 h-3 w-3 flex-shrink-0 ${highlight ? "text-gold" : "text-foreground"}`} />
             <span>{f}</span>
           </li>
         ))}
       </ul>
       {footnote && (
-        <p className="mb-6 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+        <p className="mb-3 font-mono text-[9px] uppercase tracking-[0.2em] text-muted-foreground">
           {footnote}
         </p>
       )}
       <a
         href="mailto:info@arixmarketing.nl"
-        className={`inline-flex items-center justify-center gap-2 rounded-sm px-4 py-3 text-sm font-medium uppercase tracking-wider transition ${
+        className={`inline-flex items-center justify-center gap-2 rounded-sm px-3 py-2 text-xs font-medium uppercase tracking-wider transition ${
           highlight
             ? "bg-gold text-primary-foreground hover:opacity-90"
             : "border border-border hover:border-gold hover:text-gold"
         }`}
       >
-        Start nu <ArrowUpRight className="h-4 w-4" />
+        Start nu <ArrowUpRight className="h-3.5 w-3.5" />
       </a>
     </motion.div>
   );
