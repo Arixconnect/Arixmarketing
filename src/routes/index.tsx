@@ -21,10 +21,11 @@ import {
   Layers,
 } from "lucide-react";
 import heroImg from "@/assets/hero-abstract.jpg";
-import p1 from "@/assets/portfolio-1.jpg";
-import p2 from "@/assets/portfolio-2.jpg";
-import p3 from "@/assets/portfolio-3.jpg";
-import p4 from "@/assets/portfolio-4.jpg";
+import workBroodje from "@/assets/work-broodje.jpg";
+import workIchiba from "@/assets/work-ichiba.jpg";
+import workBarber from "@/assets/work-barber.jpg";
+import workStudiekunst from "@/assets/work-studiekunst.jpg";
+import workGsm from "@/assets/work-gsm.jpg";
 import logoImg from "@/assets/arix-logo.png";
 
 export const Route = createFileRoute("/")({
