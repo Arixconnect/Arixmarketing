@@ -243,8 +243,8 @@ function WhatWeDo() {
           className="col-span-12 flex flex-col justify-end gap-8 md:col-span-5"
         >
           <p className="text-lg leading-relaxed text-muted-foreground">
-            In een wereld vol prikkels en geluid, bouwen wij aan overzicht en
-            consistentie. Van eerste post tot conversie — een strategie die past
+            In een world vol prikkels en geluid, bouwen wij aan overzicht en
+            consistentie. Van eerste post tot conversie. Een strategie die past
             bij jouw merk, jouw doelgroep en jouw ambities.
           </p>
 
