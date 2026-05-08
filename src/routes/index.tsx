@@ -532,7 +532,7 @@ function Pricing() {
           Social media <span className="italic gold-gradient-text">pakketten</span>
         </h2>
         <p className="mt-6 max-w-xl text-muted-foreground">
-          Tot 3 platforms inbegrepen. Extra platform: <span className="text-gold">+€250/mnd</span>.
+          €3000
         </p>
       </motion.div>
 
