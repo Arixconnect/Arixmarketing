@@ -7,5 +7,6 @@ Live domein: https://www.arixmarketing.nl/
 Belangrijke pagina's:
 
 - `index.html`
-- `privacy.html`
-- `voorwaarden.html`
+- `privacy/`
+- `voorwaarden/`
+- `annulering-terugbetaling/`
