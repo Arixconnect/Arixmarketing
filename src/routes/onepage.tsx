@@ -7,12 +7,9 @@ import {
   Check,
   ChevronRight,
   CircleCheck,
-  Clock3,
   Code2,
   ExternalLink,
-  FileCheck2,
   Mail,
-  MessageCircle,
   MonitorSmartphone,
   Music2,
   Scissors,
@@ -35,7 +32,7 @@ export const Route = createFileRoute("/onepage")({
       {
         name: "description",
         content:
-          "Een professionele one-page website voor kappers, nagelstudio's en muziekstudio's. Vaste prijs, mobiel geoptimaliseerd en een duidelijke intake.",
+          "Een professionele one-page website voor kappers, nagelstudio's en muziekstudio's. Vanaf €399 inclusief btw, mobiel geoptimaliseerd en gebouwd vanuit een duidelijke intake.",
       },
       {
         property: "og:title",
@@ -43,15 +40,12 @@ export const Route = createFileRoute("/onepage")({
       },
       {
         property: "og:description",
-        content:
-          "Een snelle, duidelijke one-page website vanaf €423,50 inclusief btw.",
+        content: "Een complete one-page website vanaf €399 inclusief btw.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://arixmarketing.nl/onepage" },
     ],
-    links: [
-      { rel: "canonical", href: "https://arixmarketing.nl/onepage" },
-    ],
+    links: [{ rel: "canonical", href: "https://arixmarketing.nl/onepage" }],
   }),
 });
 
@@ -64,31 +58,31 @@ const fadeUp = {
 
 const products = [
   {
-    name: "One Page Start",
-    price: "€423,50",
-    exVat: "€350 excl. btw",
+    name: "One Page",
+    price: "€399",
+    exVat: "€329,75 excl. btw",
     description:
       "Voor ondernemers die snel een professionele, duidelijke en mobielvriendelijke website nodig hebben.",
     features: [
       "Eén pagina met maximaal zeven secties",
       "Mobiel geoptimaliseerd",
       "Contact-, bel- of WhatsApp-knop",
-      "Teksten op basis van jouw intake",
+      "Teksten uitgewerkt vanuit jouw intake",
       "Basis-SEO en domeinkoppeling",
       "Eén gebundelde correctieronde",
     ],
     cta: "Bestel mijn website",
-    href: "mailto:info@arixmarketing.nl?subject=One%20Page%20Start%20bestellen",
+    href: "mailto:info@arixmarketing.nl?subject=One%20Page%20van%20€399%20bestellen",
     featured: false,
   },
   {
     name: "One Page Boekbaar",
-    price: "€523,50",
-    exVat: "€432,64 excl. btw",
+    price: "€599",
+    exVat: "€495,04 excl. btw",
     description:
       "Voor dienstverleners die bezoekers direct een afspraak willen laten inplannen.",
     features: [
-      "Alles uit One Page Start",
+      "Alles uit het One Page-pakket",
       "Setmore-account op bedrijfsnaam",
       "Maximaal acht diensten en twee medewerkers",
       "Beschikbaarheid en openingstijden instellen",
@@ -96,7 +90,7 @@ const products = [
       "Eén testboeking en korte uitleg",
     ],
     cta: "Maak mijn website boekbaar",
-    href: "mailto:info@arixmarketing.nl?subject=One%20Page%20Boekbaar%20bestellen",
+    href: "mailto:info@arixmarketing.nl?subject=One%20Page%20Boekbaar%20van%20€599%20bestellen",
     featured: true,
   },
 ];
@@ -110,7 +104,6 @@ function OnePageCampaign() {
       <Workflow />
       <Pricing />
       <Proof />
-      <Scope />
       <Faq />
       <FinalCta />
       <Footer />
@@ -141,7 +134,7 @@ function Navigation() {
           href="#prijzen"
           className="rounded-full bg-gold px-4 py-2.5 text-xs font-bold uppercase tracking-[0.12em] text-primary-foreground transition hover:opacity-90 md:px-5"
         >
-          Bekijk prijs
+          Bekijk prijzen
         </a>
       </div>
     </header>
@@ -165,7 +158,7 @@ function Hero() {
             transition={{ duration: 0.75, delay: 0.08 }}
             className="max-w-5xl font-display text-5xl font-black leading-[0.94] tracking-tight sm:text-6xl md:text-7xl xl:text-[6.2rem]"
           >
-            Professioneel online met{" ""}
+            Professioneel online met{" "}
             <span className="gold-gradient-text italic">één sterke pagina.</span>
           </motion.h1>
           <motion.p
@@ -174,8 +167,8 @@ function Hero() {
             className="mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl"
           >
             Een snelle, duidelijke en mobiel geoptimaliseerde website voor kappers,
-            nagelstudio&apos;s en muziekstudio&apos;s. Geen lang verkooptraject: kies je
-            pakket, lever je informatie aan en wij bouwen.
+            nagelstudio&apos;s en muziekstudio&apos;s. Kies je pakket, lever je informatie
+            aan en wij bouwen.
           </motion.p>
           <motion.div
             {...fadeUp}
@@ -197,22 +190,16 @@ function Hero() {
           </motion.div>
         </div>
 
-        <motion.div
-          {...fadeUp}
-          transition={{ duration: 0.85, delay: 0.18 }}
-          className="relative"
-        >
+        <motion.div {...fadeUp} transition={{ duration: 0.85, delay: 0.18 }} className="relative">
           <div className="absolute -inset-4 bg-gradient-to-br from-gold/20 via-transparent to-transparent blur-3xl" />
           <div className="relative border border-gold/35 bg-card/90 p-7 shadow-2xl md:p-9">
             <div className="flex items-start justify-between gap-6">
               <div>
                 <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-gold">
-                  Vaste prijs
+                  Transparante prijs
                 </div>
-                <div className="mt-3 font-display text-5xl font-bold">€423,50</div>
-                <div className="mt-1 text-sm text-muted-foreground">
-                  incl. btw · €350 excl. btw
-                </div>
+                <div className="mt-3 font-display text-5xl font-bold">€399</div>
+                <div className="mt-1 text-sm text-muted-foreground">inclusief btw</div>
               </div>
               <MonitorSmartphone className="h-7 w-7 text-gold" />
             </div>
@@ -221,7 +208,7 @@ function Hero() {
                 "Complete one-page website",
                 "Eerste concept na complete intake",
                 "Mobiel geoptimaliseerd",
-                "Tekst uitgewerkt vanuit jouw input",
+                "Teksten uitgewerkt vanuit jouw input",
                 "Eén correctieronde",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3 text-sm">
@@ -229,9 +216,6 @@ function Hero() {
                   <span>{item}</span>
                 </div>
               ))}
-            </div>
-            <div className="mt-8 border-t border-border pt-6 text-sm leading-relaxed text-muted-foreground">
-              De productietijd begint zodra de betaling, intake, teksten en beelden compleet zijn.
             </div>
           </div>
         </motion.div>
@@ -300,9 +284,9 @@ function Audience() {
 function Workflow() {
   const steps = [
     ["01", "Kies en betaal", "Selecteer de gewone of boekbare one-page."],
-    ["02", "Vul de intake in", "Lever bedrijfsinformatie, diensten, teksten, logo en beelden aan."],
-    ["03", "Wij bouwen", "Je input wordt omgezet in een duidelijke Codex-brief en eerste websiteversie."],
-    ["04", "Controle en live", "Je geeft één gebundelde correctieronde door, daarna koppelen we het domein."],
+    ["02", "Vul de intake in", "Lever bedrijfsinformatie, diensten, logo en beelden aan."],
+    ["03", "Wij bouwen", "Je input wordt omgezet in een duidelijke Codex-brief en websiteversie."],
+    ["04", "Controle en live", "Na één correctieronde koppelen we het domein."],
   ];
 
   return (
@@ -334,11 +318,9 @@ function Pricing() {
       <div className="mx-auto max-w-[1200px]">
         <motion.div {...fadeUp} className="mx-auto max-w-3xl text-center">
           <SectionLabel number="03">Vaste pakketten</SectionLabel>
-          <h2 className="font-display text-4xl font-bold md:text-6xl">
-            Kies alleen wat jouw bedrijf nodig heeft.
-          </h2>
+          <h2 className="font-display text-4xl font-bold md:text-6xl">Kies wat jouw bedrijf nodig heeft.</h2>
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-            De bedragen inclusief btw zijn het exacte bedrag dat bij de checkout wordt afgerekend.
+            De grote prijs is inclusief btw en is het bedrag dat bij de checkout wordt afgerekend.
           </p>
         </motion.div>
         <div className="mt-14 grid gap-6 lg:grid-cols-2">
@@ -348,9 +330,7 @@ function Pricing() {
               {...fadeUp}
               transition={{ duration: 0.65, delay: index * 0.08 }}
               className={`relative flex flex-col border p-7 md:p-9 ${
-                product.featured
-                  ? "border-gold bg-gold/[0.07]"
-                  : "border-border bg-background"
+                product.featured ? "border-gold bg-gold/[0.07]" : "border-border bg-background"
               }`}
             >
               {product.featured && (
@@ -358,16 +338,10 @@ function Pricing() {
                   Meest gekozen
                 </div>
               )}
-              <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-gold">
-                {product.name}
-              </div>
-              <div className="mt-6 font-display text-5xl font-black">{product.price}</div>
-              <div className="mt-1 text-sm text-muted-foreground">
-                incl. btw · {product.exVat}
-              </div>
-              <p className="mt-7 text-sm leading-7 text-muted-foreground">
-                {product.description}
-              </p>
+              <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-gold">{product.name}</div>
+              <div className="mt-6 font-display text-6xl font-black">{product.price}</div>
+              <div className="mt-1 text-sm text-muted-foreground">incl. btw · {product.exVat}</div>
+              <p className="mt-7 text-sm leading-7 text-muted-foreground">{product.description}</p>
               <ul className="mt-7 space-y-3 text-sm">
                 {product.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
@@ -399,19 +373,19 @@ function Proof() {
     {
       name: "Soundlab",
       label: "Interactieve preview",
-      text: "Een muziekstudio met duidelijke diensten, tarieven, teamleden en een directe Setmore-boekingsroute.",
+      text: "Een muziekstudio met diensten, tarieven, teamleden en een directe Setmore-boekingsroute.",
       href: "https://arixconnect.github.io/Soundlab/",
     },
     {
       name: "Master Barbershop",
       label: "Website + online boeken",
-      text: "Een mobiele website die bezoekers snel naar behandelingen, prijzen, openingstijden en de boekingspagina leidt.",
+      text: "Een mobiele website die bezoekers naar behandelingen, prijzen en de boekingspagina leidt.",
       href: "https://masterbarbershop.nl",
     },
     {
       name: "GSM Reparatie Arnhem",
       label: "Uitgebreide bedrijfssite",
-      text: "Een voorbeeld van hoe diensten, reparaties en contactroutes overzichtelijk online kunnen worden gepresenteerd.",
+      text: "Een voorbeeld van hoe diensten en contactroutes overzichtelijk online worden gepresenteerd.",
       href: "https://www.gsmreparatie-arnhem.nl",
     },
   ];
@@ -421,9 +395,7 @@ function Proof() {
       <div className="mx-auto max-w-[1400px]">
         <motion.div {...fadeUp} className="max-w-3xl">
           <SectionLabel number="04">Voorbeelden</SectionLabel>
-          <h2 className="font-display text-4xl font-bold md:text-6xl">
-            Bekijk hoe wij bedrijven online neerzetten.
-          </h2>
+          <h2 className="font-display text-4xl font-bold md:text-6xl">Bekijk hoe wij bedrijven online neerzetten.</h2>
         </motion.div>
         <div className="mt-14 grid gap-5 lg:grid-cols-3">
           {cases.map((item, index) => (
@@ -437,9 +409,7 @@ function Proof() {
               className="group border border-border bg-card/50 p-7 transition hover:-translate-y-1 hover:border-gold/45"
             >
               <div className="flex items-center justify-between">
-                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-gold">
-                  {item.label}
-                </span>
+                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-gold">{item.label}</span>
                 <ExternalLink className="h-4 w-4 text-muted-foreground transition group-hover:text-gold" />
               </div>
               <h3 className="mt-14 font-display text-3xl font-semibold">{item.name}</h3>
@@ -452,62 +422,15 @@ function Proof() {
   );
 }
 
-function Scope() {
-  const included = [
-    "Maximaal zeven inhoudelijke secties",
-    "Teksten uitgewerkt vanuit een complete intake",
-    "Responsief ontwerp voor mobiel en desktop",
-    "Basis-SEO, contactroute en domeinkoppeling",
-    "Eén gebundelde correctieronde",
-  ];
-  const excluded = [
-    "Webshop of betaalplatform",
-    "Meerdere losse pagina's",
-    "Maatwerksoftware of complexe koppelingen",
-    "Foto- en videoproductie",
-    "Domein-, hosting- en abonnementskosten",
-    "Onbeperkte correctierondes",
-  ];
-
-  return (
-    <section className="border-y border-border bg-card/30 px-5 py-24 md:px-10 md:py-32">
-      <div className="mx-auto grid max-w-[1200px] gap-6 lg:grid-cols-2">
-        <motion.div {...fadeUp} className="border border-gold/35 bg-gold/[0.05] p-7 md:p-9">
-          <FileCheck2 className="h-7 w-7 text-gold" />
-          <h3 className="mt-6 font-display text-3xl font-semibold">Inbegrepen</h3>
-          <ul className="mt-7 space-y-4">
-            {included.map((item) => (
-              <li key={item} className="flex items-start gap-3 text-sm leading-6">
-                <Check className="mt-0.5 h-4 w-4 shrink-0 text-gold" /> {item}
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-        <motion.div {...fadeUp} className="border border-border bg-background p-7 md:p-9">
-          <ShieldCheck className="h-7 w-7 text-muted-foreground" />
-          <h3 className="mt-6 font-display text-3xl font-semibold">Niet inbegrepen</h3>
-          <ul className="mt-7 space-y-4">
-            {excluded.map((item) => (
-              <li key={item} className="flex items-start gap-3 text-sm leading-6 text-muted-foreground">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-muted-foreground" /> {item}
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
 function Faq() {
   const items = [
     {
       q: "Wanneer begint de productietijd?",
-      a: "Nadat de betaling is ontvangen en de volledige intake, teksten, het logo en de benodigde beelden compleet zijn aangeleverd.",
+      a: "Nadat de betaling en de volledige intake, het logo en de benodigde beelden compleet zijn aangeleverd.",
     },
     {
       q: "Is dit een AI-website?",
-      a: "We gebruiken moderne hulpmiddelen en Codex om efficiënt te bouwen. De website wordt door Arix Marketing ingericht, gecontroleerd en afgestemd op jouw aangeleverde bedrijfsinformatie.",
+      a: "We gebruiken Codex om efficiënt te bouwen. De website wordt door Arix Marketing ingericht, gecontroleerd en afgestemd op jouw bedrijf.",
     },
     {
       q: "Kan ik later extra pagina's toevoegen?",
@@ -515,22 +438,16 @@ function Faq() {
     },
     {
       q: "Wie is eigenaar van Setmore en de agenda?",
-      a: "Het account staat op naam van jouw bedrijf. Jij blijft eigenaar van de login, agenda en eventuele Stripe-koppeling. Wij begeleiden alleen de inrichting.",
-    },
-    {
-      q: "Zijn domein en hosting inbegrepen?",
-      a: "De technische koppeling is inbegrepen. De domein-, hosting- en eventuele abonnementskosten worden door de klant zelf betaald.",
+      a: "Het account staat op naam van jouw bedrijf. Jij blijft eigenaar van de login, agenda en eventuele Stripe-koppeling.",
     },
   ];
 
   return (
-    <section className="px-5 py-24 md:px-10 md:py-32">
+    <section className="border-t border-border px-5 py-24 md:px-10 md:py-32">
       <div className="mx-auto grid max-w-[1200px] gap-14 lg:grid-cols-[0.7fr_1.3fr]">
         <motion.div {...fadeUp}>
           <SectionLabel number="05">Veelgestelde vragen</SectionLabel>
-          <h2 className="font-display text-4xl font-bold md:text-5xl">
-            Duidelijk voordat je bestelt.
-          </h2>
+          <h2 className="font-display text-4xl font-bold md:text-5xl">Duidelijk voordat je bestelt.</h2>
         </motion.div>
         <motion.div {...fadeUp}>
           <Accordion type="single" collapsible className="w-full">
@@ -539,9 +456,7 @@ function Faq() {
                 <AccordionTrigger className="py-6 text-left font-display text-xl hover:text-gold hover:no-underline">
                   {item.q}
                 </AccordionTrigger>
-                <AccordionContent className="pb-6 text-sm leading-7 text-muted-foreground">
-                  {item.a}
-                </AccordionContent>
+                <AccordionContent className="pb-6 text-sm leading-7 text-muted-foreground">{item.a}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
@@ -554,30 +469,29 @@ function Faq() {
 function FinalCta() {
   return (
     <section className="px-5 pb-24 md:px-10 md:pb-32">
-      <motion.div {...fadeUp} className="relative mx-auto max-w-[1400px] overflow-hidden bg-gold px-7 py-16 text-primary-foreground md:px-14 md:py-20">
+      <motion.div
+        {...fadeUp}
+        className="relative mx-auto max-w-[1400px] overflow-hidden bg-gold px-7 py-16 text-primary-foreground md:px-14 md:py-20"
+      >
         <div className="absolute inset-0 opacity-10 grain" />
         <div className="relative grid gap-10 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
           <div>
-            <div className="font-mono text-[10px] font-bold uppercase tracking-[0.22em]">
-              Doe mee met de challenge
-            </div>
+            <div className="font-mono text-[10px] font-bold uppercase tracking-[0.22em]">Doe mee met de challenge</div>
             <h2 className="mt-5 max-w-4xl font-display text-4xl font-black leading-tight md:text-6xl">
               Word één van de 16 bedrijven die wij in 90 dagen online zetten.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-7 text-primary-foreground/75 md:text-lg">
-              Start voor €423,50 inclusief btw met een complete one-page website.
+              Start voor €399 inclusief btw met een complete one-page website.
             </p>
           </div>
           <div className="flex flex-col gap-3 lg:items-end">
             <a
-              href="mailto:info@arixmarketing.nl?subject=Ik%20wil%20meedoen%20met%20de%20one-page%20challenge"
+              href="#prijzen"
               className="inline-flex items-center justify-center gap-3 rounded-full bg-background px-7 py-4 text-sm font-bold uppercase tracking-[0.12em] text-foreground transition hover:scale-[1.02]"
             >
-              Mijn plek reserveren <ArrowRight className="h-4 w-4" />
+              Kies mijn pakket <ArrowRight className="h-4 w-4" />
             </a>
-            <span className="text-xs text-primary-foreground/70">
-              Vaste scope · één correctieronde · transparante prijs
-            </span>
+            <span className="text-xs text-primary-foreground/70">Vaste scope · één correctieronde · transparante prijs</span>
           </div>
         </div>
       </motion.div>
