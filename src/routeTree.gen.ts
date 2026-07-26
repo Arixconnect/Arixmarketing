@@ -9,8 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as RecruitmentCampaignRouteImport } from './routes/recruitment-campagne'
+import { Route as RecruitmentRouteImport } from './routes/recruitment'
+import { Route as OnepageRouteImport } from './routes/onepage'
 import { Route as IndexRouteImport } from './routes/index'
 
+const RecruitmentCampaignRoute = RecruitmentCampaignRouteImport.update({
+  id: '/recruitment-campagne',
+  path: '/recruitment-campagne',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RecruitmentRoute = RecruitmentRouteImport.update({
+  id: '/recruitment',
+  path: '/recruitment',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnepageRoute = OnepageRouteImport.update({
+  id: '/onepage',
+  path: '/onepage',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,24 +37,36 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/onepage': typeof OnepageRoute
+  '/recruitment': typeof RecruitmentRoute
+  '/recruitment-campagne': typeof RecruitmentCampaignRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/onepage': typeof OnepageRoute
+  '/recruitment': typeof RecruitmentRoute
+  '/recruitment-campagne': typeof RecruitmentCampaignRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/onepage': typeof OnepageRoute
+  '/recruitment': typeof RecruitmentRoute
+  '/recruitment-campagne': typeof RecruitmentCampaignRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/onepage' | '/recruitment' | '/recruitment-campagne'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/onepage' | '/recruitment' | '/recruitment-campagne'
+  id: '__root__' | '/' | '/onepage' | '/recruitment' | '/recruitment-campagne'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  OnepageRoute: typeof OnepageRoute
+  RecruitmentRoute: typeof RecruitmentRoute
+  RecruitmentCampaignRoute: typeof RecruitmentCampaignRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +78,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/onepage': {
+      id: '/onepage'
+      path: '/onepage'
+      fullPath: '/onepage'
+      preLoaderRoute: typeof OnepageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/recruitment': {
+      id: '/recruitment'
+      path: '/recruitment'
+      fullPath: '/recruitment'
+      preLoaderRoute: typeof RecruitmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/recruitment-campagne': {
+      id: '/recruitment-campagne'
+      path: '/recruitment-campagne'
+      fullPath: '/recruitment-campagne'
+      preLoaderRoute: typeof RecruitmentCampaignRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  OnepageRoute: OnepageRoute,
+  RecruitmentRoute: RecruitmentRoute,
+  RecruitmentCampaignRoute: RecruitmentCampaignRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
