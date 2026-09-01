@@ -44,6 +44,17 @@
     .example-card strong{display:block;margin-top:10px;color:#fff;font-size:1.12rem;line-height:1.15}
     .example-card span{display:block;margin-top:10px;color:rgba(255,255,255,.72);font-size:.92rem}
     .example-card.is-empty{opacity:.72}
+    .website-case-slider{margin-top:30px;overflow:hidden}
+    .website-case-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}
+    .website-case-track{display:grid;width:100%;max-width:100%;grid-auto-flow:column;grid-auto-columns:minmax(280px,390px);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;padding-bottom:8px}
+    .website-case{position:relative;display:flex;min-height:255px;flex-direction:column;justify-content:flex-end;overflow:hidden;scroll-snap-align:start;border:1px solid rgba(255,255,255,.16);border-radius:11px;background:linear-gradient(135deg,#160017,#2a082e)}
+    .website-case img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.66}
+    .website-case:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,0,9,.08),rgba(9,0,9,.92))}
+    .website-case div{position:relative;z-index:2;padding:20px}
+    .website-case small{color:var(--gold);font-weight:900;text-transform:uppercase;letter-spacing:.1em}
+    .website-case strong{display:block;margin-top:8px;color:#fff;font-size:1.45rem;line-height:1.05}
+    .website-case span{display:block;margin-top:10px;color:rgba(255,255,255,.74)}
+    .slider-note{max-width:760px;margin:14px 0 0;color:rgba(255,255,255,.68);font-size:.94rem}
     .video-shell{margin-top:30px;overflow:hidden}
     .slider-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}
     .slider-controls{display:flex;gap:10px}
@@ -56,7 +67,7 @@
     .video-placeholder{display:grid;height:100%;min-height:438px;place-items:center;padding:24px;color:rgba(255,255,255,.72);text-align:center}
     .video-caption{padding:14px 16px;color:rgba(255,255,255,.76);font-size:.92rem}
     @media(max-width:1200px){.service-grid,.example-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:720px){.hero-logo-mark img{width:74px;height:74px}.service-grid{grid-template-columns:1fr}.card-actions{flex-direction:column}.example-grid{grid-template-columns:1fr}.slider-head{align-items:flex-start;flex-direction:column}.video-slider{grid-auto-columns:minmax(238px,82vw)}}
+    @media(max-width:720px){.hero-logo-mark img{width:74px;height:74px}.service-grid{grid-template-columns:1fr}.card-actions{flex-direction:column}.example-grid{grid-template-columns:1fr}.website-case-head,.slider-head{align-items:flex-start;flex-direction:column}.website-case-track{grid-auto-columns:minmax(260px,84vw)}.video-slider{grid-auto-columns:minmax(238px,82vw)}}
   </style>
 </head>
 <body>
@@ -122,32 +133,20 @@
         <article class="case"><img src="/src/assets/work-ichiba.jpg" alt="Ichiba Arnhem"><div class="case-copy"><small>Content · horeca</small><strong>Ichiba Arnhem</strong><span>Visuele content voor social media en lokale merkbeleving.</span></div></article>
         <article class="case"><img src="/src/assets/work-barber.jpg" alt="Masterbarbershop Arnhem"><div class="case-copy"><small>Website & zichtbaarheid</small><strong>Masterbarbershop</strong><span>Online uitstraling voor een lokaal merk met een sterke fysieke beleving.</span></div></article>
       </div>
-      <div class="section-head" style="margin-top:64px"><p class="eyebrow">Website voorbeelden</p><h2>Websites die klanten direct kunnen bekijken.</h2><p class="muted">De eerste voorbeelden staan klaar. De overige plekken zijn bewust gereserveerd voor echte cases zodra de juiste links en toestemming beschikbaar zijn.</p></div>
-      <div class="example-grid" aria-label="Website voorbeelden">
-        <a class="example-card" href="https://arixconnect.github.io/Soundlab/" target="_blank" rel="noopener"><small>Websitecase</small><strong>Soundlab</strong><span>Interactieve preview voor een boekbare muziekstudio.</span></a>
-        <a class="example-card" href="https://www.masterbarbershop.nl/" target="_blank" rel="noopener"><small>Websitecase</small><strong>Master Barbershop</strong><span>Lokale uitstraling, diensten en boekingsroute helder bij elkaar.</span></a>
-        <a class="example-card" href="https://studiekunst.nl/" target="_blank" rel="noopener"><small>Websitecase</small><strong>Studiekunst</strong><span>Online presentatie voor educatie, creativiteit en herkenbaarheid.</span></a>
-        <div class="example-card is-empty"><small>Plek 04</small><strong>Case toevoegen</strong><span>Reserveplek voor een volgende echte websitecase.</span></div>
-        <div class="example-card is-empty"><small>Plek 05</small><strong>Case toevoegen</strong><span>Reserveplek voor een volgende echte websitecase.</span></div>
-        <div class="example-card is-empty"><small>Plek 06</small><strong>Case toevoegen</strong><span>Reserveplek voor een volgende echte websitecase.</span></div>
-        <div class="example-card is-empty"><small>Plek 07</small><strong>Case toevoegen</strong><span>Reserveplek voor een volgende echte websitecase.</span></div>
-        <div class="example-card is-empty"><small>Plek 08</small><strong>Case toevoegen</strong><span>Reserveplek voor een volgende echte websitecase.</span></div>
-        <div class="example-card is-empty"><small>Plek 09</small><strong>Case toevoegen</strong><span>Reserveplek voor een volgende echte websitecase.</span></div>
-        <div class="example-card is-empty"><small>Plek 10</small><strong>Case toevoegen</strong><span>Reserveplek voor een volgende echte websitecase.</span></div>
+      <div class="website-case-slider" aria-label="Website cases">
+        <div class="website-case-head"><div><p class="eyebrow">Website cases</p><h2>Een website moet direct duidelijk maken waarom iemand kiest.</h2><p class="muted">Scroll door een selectie van echte websites. Nieuwe cases voegen we pas toe wanneer de link, context en toestemming compleet zijn.</p></div><div class="slider-controls"><button class="slider-button" type="button" onclick="window.scrollWebsiteCases?.(-1)" aria-label="Vorige websitecase">‹</button><button class="slider-button" type="button" onclick="window.scrollWebsiteCases?.(1)" aria-label="Volgende websitecase">›</button></div></div>
+        <div class="website-case-track" data-website-case-slider>
+          <a class="website-case" href="https://arixconnect.github.io/Soundlab/" target="_blank" rel="noopener"><div><small>Muziekstudio</small><strong>Soundlab</strong><span>Van idee naar een professionele online preview met duidelijke boekingsrichting.</span></div></a>
+          <a class="website-case" href="https://www.masterbarbershop.nl/" target="_blank" rel="noopener"><img src="/src/assets/work-barber.jpg" alt="Master Barbershop websitecase" loading="lazy"><div><small>Barbershop</small><strong>Master Barbershop</strong><span>Diensten, uitstraling en afspraak maken logisch op één plek.</span></div></a>
+          <a class="website-case" href="https://studiekunst.nl/" target="_blank" rel="noopener"><img src="/src/assets/work-studiekunst.jpg" alt="Studiekunst websitecase" loading="lazy"><div><small>Creatief onderwijs</small><strong>Studiekunst</strong><span>Een rustige online presentatie voor aanbod, vertrouwen en contact.</span></div></a>
+        </div>
+        <p class="slider-note">Doel: hier komen uiteindelijk tien sterke websitecases te staan. Nu tonen we alleen cases die al echt beschikbaar zijn.</p>
       </div>
       <div class="video-shell" id="contentvoorbeelden">
-        <div class="slider-head"><div><p class="eyebrow">Content voorbeelden</p><h2>Verticale video's in 9:16.</h2><p class="muted">De slider is ingericht voor tien YouTube Shorts in 1080 x 1920-formaat. De eerste twee voorbeelden zijn alvast geplaatst.</p></div><div class="slider-controls"><button class="slider-button" type="button" data-slider-prev onclick="window.scrollContentVideos?.(-1)" aria-label="Vorige video">‹</button><button class="slider-button" type="button" data-slider-next onclick="window.scrollContentVideos?.(1)" aria-label="Volgende video">›</button></div></div>
+        <div class="slider-head"><div><p class="eyebrow">Content voorbeelden</p><h2>Korte video's die sfeer, product en actie direct laten zien.</h2><p class="muted">Verticale content in 9:16 voor Reels, Shorts, TikTok en advertenties. De rest van de selectie voegen we toe zodra de links compleet zijn.</p></div><div class="slider-controls"><button class="slider-button" type="button" data-slider-prev onclick="window.scrollContentVideos?.(-1)" aria-label="Vorige video">‹</button><button class="slider-button" type="button" data-slider-next onclick="window.scrollContentVideos?.(1)" aria-label="Volgende video">›</button></div></div>
         <div class="video-slider" data-video-slider>
-          <article class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/pRVYnykQH2I" title="Arix Marketing video voorbeeld 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-caption">Video voorbeeld 01</div></article>
-          <article class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/M2qi-feGnjo" title="Arix Marketing video voorbeeld 2" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-caption">Video voorbeeld 02</div></article>
-          <article class="video-card"><div class="video-frame"><div class="video-placeholder">Video 03 toevoegen</div></div><div class="video-caption">Beschikbaar voor een echte contentcase</div></article>
-          <article class="video-card"><div class="video-frame"><div class="video-placeholder">Video 04 toevoegen</div></div><div class="video-caption">Beschikbaar voor een echte contentcase</div></article>
-          <article class="video-card"><div class="video-frame"><div class="video-placeholder">Video 05 toevoegen</div></div><div class="video-caption">Beschikbaar voor een echte contentcase</div></article>
-          <article class="video-card"><div class="video-frame"><div class="video-placeholder">Video 06 toevoegen</div></div><div class="video-caption">Beschikbaar voor een echte contentcase</div></article>
-          <article class="video-card"><div class="video-frame"><div class="video-placeholder">Video 07 toevoegen</div></div><div class="video-caption">Beschikbaar voor een echte contentcase</div></article>
-          <article class="video-card"><div class="video-frame"><div class="video-placeholder">Video 08 toevoegen</div></div><div class="video-caption">Beschikbaar voor een echte contentcase</div></article>
-          <article class="video-card"><div class="video-frame"><div class="video-placeholder">Video 09 toevoegen</div></div><div class="video-caption">Beschikbaar voor een echte contentcase</div></article>
-          <article class="video-card"><div class="video-frame"><div class="video-placeholder">Video 10 toevoegen</div></div><div class="video-caption">Beschikbaar voor een echte contentcase</div></article>
+          <article class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/pRVYnykQH2I" title="Social video voor Arix Marketing" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-caption"><strong>Social video</strong><br>Snel laten zien wat mensen kunnen verwachten.</div></article>
+          <article class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/M2qi-feGnjo" title="Reels content voor Arix Marketing" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-caption"><strong>Reels content</strong><br>Herkenbare korte content voor bereik en vertrouwen.</div></article>
         </div>
       </div>
     </section>
@@ -178,6 +177,6 @@
   </main>
 
   <footer><div><strong>Arix Marketing</strong><span>Social media & content bureau</span><a href="mailto:info@arixmarketing.nl">info@arixmarketing.nl</a></div><nav aria-label="Footer navigatie"><a href="/over-ons/">Over ons</a><a href="/voorwaarden/">Voorwaarden</a><a href="/privacy/">Privacy</a><a href="/annulering-terugbetaling/">Annulering & terugbetaling</a></nav></footer>
-  <script>const header=document.querySelector('.site-header'),menuToggle=document.querySelector('.menu-toggle'),navLinks=document.querySelectorAll('.nav a,.header-cta');menuToggle?.addEventListener('click',()=>{const isOpen=header?.classList.toggle('is-open');menuToggle.setAttribute('aria-expanded',String(Boolean(isOpen)));menuToggle.setAttribute('aria-label',isOpen?'Menu sluiten':'Menu openen')});navLinks.forEach(link=>link.addEventListener('click',()=>{header?.classList.remove('is-open');menuToggle?.setAttribute('aria-expanded','false')}));window.scrollContentVideos=direction=>{const videoSlider=document.querySelector('[data-video-slider]');if(!videoSlider)return;const amount=Math.min(videoSlider.clientWidth*.9,320);videoSlider.scrollLeft+=direction*amount};</script>
+  <script>const header=document.querySelector('.site-header'),menuToggle=document.querySelector('.menu-toggle'),navLinks=document.querySelectorAll('.nav a,.header-cta');menuToggle?.addEventListener('click',()=>{const isOpen=header?.classList.toggle('is-open');menuToggle.setAttribute('aria-expanded',String(Boolean(isOpen)));menuToggle.setAttribute('aria-label',isOpen?'Menu sluiten':'Menu openen')});navLinks.forEach(link=>link.addEventListener('click',()=>{header?.classList.remove('is-open');menuToggle?.setAttribute('aria-expanded','false')}));window.scrollContentVideos=direction=>{const videoSlider=document.querySelector('[data-video-slider]');if(!videoSlider)return;const amount=Math.min(videoSlider.clientWidth*.9,320);videoSlider.scrollLeft+=direction*amount};window.scrollWebsiteCases=direction=>{const caseSlider=document.querySelector('[data-website-case-slider]');if(!caseSlider)return;const amount=Math.min(caseSlider.clientWidth*.9,420);caseSlider.scrollLeft+=direction*amount};</script>
 </body>
 </html>
