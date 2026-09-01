@@ -11,9 +11,34 @@
   <style>
     :root{--ink:#140015;--ink2:#260029;--paper:#fffdf8;--soft:#f4f2f4;--muted:#675d68;--gold:#f5b914;--gold2:#ffd56b;--line:rgba(20,0,21,.13)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--paper);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}h1,h2,h3{letter-spacing:-.035em}h1{font-size:clamp(3rem,7vw,6.5rem);line-height:.92;margin:0}h2{font-size:clamp(2.1rem,4vw,4.2rem);line-height:1;margin:0 0 22px}h3{font-size:1.25rem;margin:0 0 7px}.wrap{max-width:1320px;margin:auto;padding:0 24px}.header{position:sticky;top:0;z-index:20;background:rgba(255,253,248,.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.header .wrap{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:950;text-transform:uppercase}.nav{display:flex;gap:20px;align-items:center;font-size:.9rem;font-weight:800}.nav .cta{background:var(--gold);padding:10px 14px;border-radius:7px}.hero{color:#fff;background:radial-gradient(circle at 80% 10%,rgba(245,185,20,.25),transparent 28%),linear-gradient(135deg,var(--ink),var(--ink2));padding:110px 0 90px}.eyebrow{color:var(--gold);font-size:.76rem;font-weight:950;letter-spacing:.15em;text-transform:uppercase;margin:0 0 16px}.hero p{max-width:780px;color:rgba(255,255,255,.77);font-size:1.15rem}.section{padding:86px 0}.soft{background:var(--soft)}.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:start}.copy{color:var(--muted)}.values{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:34px}.value,.person,.role{padding:24px;border:1px solid var(--line);background:#fff;border-radius:9px}.value strong{display:block;margin-bottom:8px}.team{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.person.featured{grid-column:span 2;display:grid;grid-template-columns:220px 1fr;gap:24px}.person img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px}.role-label{color:#8a6500;font-size:.72rem;font-weight:950;letter-spacing:.1em;text-transform:uppercase}.person p,.role p{color:var(--muted);font-size:.92rem}.network-note{max-width:900px;margin-top:22px;color:var(--muted)}.roles{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.role a{font-weight:900;text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:2px}.roadmap{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.17);border:1px solid rgba(255,255,255,.17)}.roadmap div{padding:26px;background:rgba(255,255,255,.06)}.roadmap small{color:var(--gold);font-weight:950}.roadmap strong{display:block;margin-top:7px}.dark{background:linear-gradient(135deg,var(--ink),var(--ink2));color:#fff}.dark p{color:rgba(255,255,255,.72)}.button{display:inline-flex;margin-top:25px;padding:13px 18px;background:var(--gold);color:#130014;font-weight:950;border-radius:7px}footer{padding:28px 0;background:#090009;color:rgba(255,255,255,.7)}footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}@media(max-width:900px){.split,.person.featured{grid-template-columns:1fr}.values,.team,.roles,.roadmap{grid-template-columns:1fr 1fr}.person.featured{grid-column:auto}.person.featured img{max-width:260px}.nav a:not(.cta){display:none}}@media(max-width:600px){.values,.team,.roles,.roadmap{grid-template-columns:1fr}.hero{padding:80px 0 70px}}
   </style>
+  <style>
+    html{scroll-padding-top:90px}
+    .site-header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:22px;min-height:76px;padding:10px clamp(20px,5vw,64px);background:rgba(255,253,248,.9);border-bottom:1px solid var(--line);box-shadow:0 10px 34px rgba(20,0,21,.06);backdrop-filter:blur(20px)}
+    .site-header .brand{display:flex;align-items:center;gap:10px;min-width:max-content;text-transform:none}
+    .site-header .brand img{width:46px;height:46px;object-fit:contain}
+    .brand-text{display:grid;line-height:1.05}
+    .brand-text strong{font-size:.96rem;font-weight:950;text-transform:uppercase}
+    .brand-text small{font-size:.7rem;color:var(--muted);font-weight:800}
+    .header-actions{display:flex;align-items:center;justify-content:flex-end;gap:18px;width:100%}
+    .site-header .nav{display:flex;align-items:center;gap:5px;color:var(--muted);font-size:.88rem;font-weight:750}
+    .site-header .nav a{display:inline-flex;padding:9px 10px;border-radius:7px;white-space:nowrap}
+    .site-header .nav a:hover,.site-header .nav a:focus-visible{color:var(--ink);background:rgba(245,185,20,.12);outline:none}
+    .header-cta{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 18px;border:1px solid transparent;border-radius:7px;color:#130014;background:linear-gradient(135deg,var(--gold),var(--gold2));box-shadow:0 12px 28px rgba(245,185,20,.2);font-weight:900;white-space:nowrap}
+    .menu-toggle{display:none;width:42px;height:42px;place-items:center;border:1px solid var(--line);border-radius:7px;background:#fff;cursor:pointer}
+    .menu-toggle span{display:block;width:18px;height:2px;background:currentColor}
+    .menu-toggle span:nth-child(2){margin:5px 0}
+    @media(max-width:720px){html{scroll-padding-top:78px}.site-header{min-height:66px;padding:9px 16px;flex-wrap:wrap}.site-header .brand img{width:40px;height:40px}.menu-toggle{display:grid;margin-left:auto}.header-actions{display:none;width:100%;padding:8px 0 4px;flex-direction:column;align-items:stretch}.site-header.is-open .header-actions{display:flex}.site-header .nav{flex-direction:column;align-items:stretch}.site-header .nav a{display:flex;padding:10px 12px}.header-cta{width:100%}}
+  </style>
 </head>
 <body>
-  <header class="header"><div class="wrap"><a class="brand" href="/">Arix Marketing</a><nav class="nav"><a href="/#diensten">Diensten</a><a href="/#cases">Cases</a><a href="/#pakketten">Pakketten</a><a class="cta" href="https://arixmarketing.setmore.com/">Plan kennismaking</a></nav></div></header>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Arix Marketing home"><img src="../assets/logo-arixmarketing.svg" alt="Arix Marketing logo"><span class="brand-text"><strong>Arix Marketing</strong><small>Social media & content bureau</small></span></a>
+    <button class="menu-toggle" type="button" aria-label="Menu openen" aria-controls="site-nav" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="header-actions" id="site-nav">
+      <nav class="nav" aria-label="Hoofdnavigatie"><a href="/#aanpak">Aanpak</a><a href="/#diensten">Diensten</a><a href="/#cases">Cases</a><a href="/#pakketten">Pakketten</a><a href="/over-ons/">Over ons</a><a href="/#contact">Contact</a></nav>
+      <a class="header-cta" href="mailto:info@arixmarketing.nl">Stuur e-mail</a>
+    </div>
+  </header>
 
   <main>
     <section class="hero"><div class="wrap"><p class="eyebrow">Over Arix Marketing</p><h1>Goede bedrijven verdienen het om gezien te worden.</h1><p>Arix Marketing is een social media- en contentbureau uit Arnhem. We helpen bedrijven die goed zijn in wat ze doen, maar waarvan die kwaliteit online nog onvoldoende consistent zichtbaar is.</p></div></section>
@@ -47,5 +72,6 @@
   </main>
 
   <footer><div class="wrap"><div><strong>Arix Marketing</strong> · Arnhem</div><div><a href="mailto:info@arixmarketing.nl">info@arixmarketing.nl</a> · <a href="/">Terug naar home</a></div></div></footer>
+  <script>const header=document.querySelector('.site-header'),menuToggle=document.querySelector('.menu-toggle'),navLinks=document.querySelectorAll('.nav a,.header-cta');menuToggle?.addEventListener('click',()=>{const isOpen=header?.classList.toggle('is-open');menuToggle.setAttribute('aria-expanded',String(Boolean(isOpen)));menuToggle.setAttribute('aria-label',isOpen?'Menu sluiten':'Menu openen')});navLinks.forEach(link=>link.addEventListener('click',()=>{header?.classList.remove('is-open');menuToggle?.setAttribute('aria-expanded','false');menuToggle?.setAttribute('aria-label','Menu openen')}));</script>
 </body>
 </html>
