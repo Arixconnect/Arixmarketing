@@ -67,6 +67,8 @@
     @media(max-width:1200px){.service-grid,.example-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:720px){.service-grid{grid-template-columns:1fr}.card-actions{flex-direction:column}.example-grid{grid-template-columns:1fr}.website-case-head,.slider-head{align-items:flex-start;flex-direction:column}.website-case-track{grid-auto-columns:minmax(260px,84vw)}.video-slider{grid-auto-columns:minmax(238px,82vw)}}
   </style>
+  <link rel="stylesheet" href="assets/portfolio.css">
+  <script src="assets/portfolio.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -74,7 +76,7 @@
     <button class="menu-toggle" type="button" aria-label="Menu openen" aria-controls="site-nav" aria-expanded="false"><span></span><span></span><span></span></button>
     <div class="header-actions" id="site-nav">
       <nav class="nav" aria-label="Hoofdnavigatie"><a href="#aanpak">Aanpak</a><a href="#diensten">Diensten</a><a href="#cases">Cases</a><a href="#pakketten">Pakketten</a><a href="/over-ons/">Over ons</a><a href="#contact">Contact</a></nav>
-      <a class="header-cta" href="mailto:info@arixmarketing.nl">Stuur e-mail</a>
+      <a class="header-cta" href="https://arixmarketing.setmore.com/">Plan een kennismaking</a>
     </div>
   </header>
 
@@ -82,12 +84,12 @@
     <section id="home" class="hero">
       <div>
         <p class="eyebrow">Social media & content bureau · Arnhem</p>
-        <h1>Consistent zichtbaar.<br>Herkenbaar aanwezig.</h1>
-        <p class="lead">Arix Marketing helpt commerciële bedrijven structureel zichtbaar te blijven met social media, content en online vindbaarheid. Van strategie en shoot tot planning, publicatie en optimalisatie.</p>
-        <div class="actions"><a class="button primary" href="mailto:info@arixmarketing.nl">Stuur e-mail</a><a class="button secondary" href="#cases">Bekijk case studies</a></div>
+        <h1>Jouw bedrijf in beeld.<br>Bij de juiste mensen.</h1>
+        <p class="lead">Social media, foto's, video's en websites die laten zien waarom klanten voor jou kiezen. Arix Marketing vertaalt jouw verhaal naar herkenbare content en een vaste online aanwezigheid.</p>
+        <div class="actions"><a class="button primary" href="https://arixmarketing.setmore.com/">Plan een kennismaking</a><a class="button secondary" href="#cases">Bekijk ons werk</a></div>
       </div>
       <div class="hero-proof">
-        <img src="/src/assets/work-broodje.jpg" alt="Contentcase Broodje & Co Arnhem">
+        <img src="assets/broodje-content.jpg" alt="Contentcase Broodje & Co Arnhem" width="1080" height="1350" fetchpriority="high">
         <div class="proof-copy"><small>Case · Broodje & Co Arnhem</small><strong>300 → 10.000</strong><span>Volgers opgebouwd met consistente organische social content.</span></div>
       </div>
     </section>
@@ -95,12 +97,12 @@
     <section class="trust" aria-label="Kern van de aanpak"><span>Strategie</span><span>Content</span><span>Social media</span><span>Online vindbaarheid</span></section>
 
     <section id="aanpak" class="section split soft">
-      <div><p class="eyebrow">Waar wij voor staan</p><h2>Niet af en toe zichtbaar. Structureel aanwezig.</h2></div>
-      <div><p class="muted">Een goede video is waardevol. Een paar sterke posts ook. Maar duurzame zichtbaarheid ontstaat pas wanneer een bedrijf consequent laat zien wie het is, wat het doet en waarom klanten ervoor moeten kiezen.</p><p class="muted">Daarom bouwen we geen losse contentmomenten, maar een terugkerend systeem van strategie, creatie, publicatie, vindbaarheid, analyse en optimalisatie.</p></div>
+      <div><p class="eyebrow">Onze aanpak</p><h2>Jij runt je bedrijf.<br>Wij brengen het in beeld.</h2></div>
+      <div><p class="muted">Je hebt genoeg te vertellen, maar niet altijd de tijd om te filmen, te schrijven en te posten. Wij maken een plan dat past bij jouw bedrijf en zorgen voor de content en publicatie.</p><p class="muted">Van een shoot op locatie tot reacties op social media: we verbinden jouw verhaal met je doelgroep. Iedere maand bekijken we wat aanslaat en wat beter kan.</p></div>
     </section>
 
     <section class="section">
-      <div class="section-head"><p class="eyebrow">Voor wie</p><h2>We zijn niet het bureau voor ieder bedrijf.</h2><p class="muted">We zijn het sterkst bij commerciële merken die iets hebben dat je kunt zien, ervaren, proeven, bezoeken of beleven.</p></div>
+      <div class="section-head"><p class="eyebrow">Voor wie</p><h2>Laat zien wat jouw bedrijf bijzonder maakt.</h2><p class="muted">Van de sfeer in je zaak tot het vakmanschap van je team. We helpen ondernemers in horeca, lifestyle, retail en sport om dat zichtbaar te maken.</p></div>
       <div class="target-grid">
         <article class="card"><span class="tag">Primair</span><h3>Horeca & food</h3><p>Restaurants, lunchrooms, foodconcepten en hospitalitymerken. Product, sfeer en locatie vertalen we naar sterke B-roll, reels en terugkerende content.</p></article>
         <article class="card"><span class="tag">Sterke match</span><h3>Lokale lifestyle & retail</h3><p>Barbers, beauty, winkels, automotive en andere lokale bedrijven waarbij uitstraling, locatie en klantbeleving zichtbaar gemaakt kunnen worden.</p></article>
@@ -109,10 +111,10 @@
     </section>
 
     <section class="section soft" id="diensten">
-      <div class="section-head"><p class="eyebrow">Diensten</p><h2>Eén doel. Vier manieren om het uit te voeren.</h2></div>
+      <div class="section-head"><p class="eyebrow">Diensten</p><h2>Van eerste indruk tot volgende afspraak.</h2></div>
       <div class="service-grid">
-        <article class="card"><span class="num">01</span><h3>Social media & content management</h3><p>Strategie, planning, captions, publicatie, communitymanagement, rapportage en basisoptimalisatie voor lokale en online vindbaarheid.</p></article>
-        <article class="card"><span class="num">02</span><h3>Contentproductie</h3><p>Foto, video, B-roll, reels en UGC-stijl content op locatie. Gericht op materiaal dat maandenlang slim ingezet kan worden.</p></article>
+        <article class="card"><span class="num">01</span><h3>Social media beheer</h3><p>Een vaste planning, herkenbare berichten en aandacht voor je volgers. We maken en plaatsen content, stimuleren interactie en bespreken de resultaten met je.</p></article>
+        <article class="card"><span class="num">02</span><h3>Foto & video</h3><p>Je product, team en werksfeer professioneel in beeld. Van korte social video's en UGC tot fotografie op locatie, passend bij je merk en doelgroep.</p></article>
         <article class="card"><span class="num">03</span><h3>Websites & conversie</h3><p>Onepagers en webshops bouwen we zelf. Voor complexere websites werken we samen met onze ontwikkelpartner NomadsOffice.</p><div class="card-actions"><a class="button outline" href="/onepage/">Bekijk onepage aanbod</a></div></article>
         <article class="card"><span class="num">04</span><h3>Recruitment campagne</h3><p>Een gerichte vacaturepagina met campagne-aanpak voor werkgevers die meer zichtbaarheid willen rond één concrete vacature.</p><div class="card-actions"><a class="button outline" href="/recruitment-campagne/">Bekijk recruitment aanbod</a></div></article>
       </div>
@@ -124,51 +126,60 @@
     </section>
 
     <section id="cases" class="section dark">
-      <div class="section-head"><p class="eyebrow">Case studies</p><h2>Werk dat laat zien wat we bedoelen.</h2><p class="muted">Geen stockfoto's als bewijs. Hier laten we echte projecten, websites en content zien.</p></div>
+      <div class="section-head"><p class="eyebrow">Case studies</p><h2>Deze bedrijven brachten we in beeld.</h2><p class="muted">Een kijkje in ons werk voor horeca en lokale ondernemers. Van content op locatie tot een herkenbare website.</p></div>
       <div class="case-grid">
-        <article class="case"><img src="/src/assets/work-broodje.jpg" alt="Broodje & Co Arnhem"><div class="case-copy"><small>Social growth · horeca</small><strong>Broodje & Co Arnhem</strong><span>Van 300 naar 10.000 volgers met consistente organische content.</span></div></article>
-        <article class="case"><img src="/src/assets/work-ichiba.jpg" alt="Ichiba Arnhem"><div class="case-copy"><small>Content · horeca</small><strong>Ichiba Arnhem</strong><span>Visuele content voor social media en lokale merkbeleving.</span></div></article>
-        <article class="case"><img src="/src/assets/work-barber.jpg" alt="Masterbarbershop Arnhem"><div class="case-copy"><small>Website & zichtbaarheid</small><strong>Masterbarbershop</strong><span>Online uitstraling voor een lokaal merk met een sterke fysieke beleving.</span></div></article>
+        <article class="case"><img src="assets/broodje-content.jpg" alt="Content voor Broodje & Co Arnhem" width="1080" height="1350" loading="lazy"><div class="case-copy"><small>Social media · horeca</small><strong>Broodje & Co Arnhem</strong><span>Van 300 naar 10.000 volgers met consistente organische content.</span></div></article>
+        <article class="case"><img src="assets/ichiba-content.jpg" alt="Content voor Ichiba Arnhem" width="1080" height="1350" loading="lazy"><div class="case-copy"><small>Content · horeca</small><strong>Ichiba Arnhem</strong><span>Gerechten en sfeer in beeld voor social media.</span></div></article>
+        <article class="case"><img src="assets/masterbarbershop-case.jpg" alt="Een barber aan het werk bij Master Barbershop Arnhem" width="1400" height="933" loading="lazy"><div class="case-copy"><small>Website, foto & video</small><strong>Master Barbershop</strong><span>Het vakmanschap en de sfeer van de zaak, ook online herkenbaar.</span></div></article>
       </div>
       <div class="website-case-slider" aria-label="Website cases">
-        <div class="website-case-head"><div><p class="eyebrow">Website cases</p><h2>Een website moet direct duidelijk maken waarom iemand kiest.</h2><p class="muted">Scroll door een selectie van echte websites. Nieuwe cases voegen we pas toe wanneer de link, context en toestemming compleet zijn.</p></div><div class="slider-controls"><button class="slider-button" type="button" onclick="window.scrollWebsiteCases?.(-1)" aria-label="Vorige websitecase">‹</button><button class="slider-button" type="button" onclick="window.scrollWebsiteCases?.(1)" aria-label="Volgende websitecase">›</button></div></div>
+        <div class="website-case-head"><div><p class="eyebrow">Websites</p><h2>Een eigen plek voor jouw merk.</h2><p class="muted">Bekijk hoe uitstraling, aanbod en boeken samenkomen in onze websites.</p></div><div class="slider-controls"><button class="slider-button" type="button" onclick="window.scrollWebsiteCases?.(-1)" aria-label="Vorige websitecase">‹</button><button class="slider-button" type="button" onclick="window.scrollWebsiteCases?.(1)" aria-label="Volgende websitecase">›</button></div></div>
         <div class="website-case-track" data-website-case-slider>
-          <a class="website-case" href="https://arixconnect.github.io/Soundlab/" target="_blank" rel="noopener"><div><small>Muziekstudio</small><strong>Soundlab</strong><span>Van idee naar een professionele online preview met duidelijke boekingsrichting.</span></div></a>
-          <a class="website-case" href="https://www.masterbarbershop.nl/" target="_blank" rel="noopener"><img src="/src/assets/work-barber.jpg" alt="Master Barbershop websitecase" loading="lazy"><div><small>Barbershop</small><strong>Master Barbershop</strong><span>Diensten, uitstraling en afspraak maken logisch op één plek.</span></div></a>
-          <a class="website-case" href="https://studiekunst.nl/" target="_blank" rel="noopener"><img src="/src/assets/work-studiekunst.jpg" alt="Studiekunst websitecase" loading="lazy"><div><small>Creatief onderwijs</small><strong>Studiekunst</strong><span>Een rustige online presentatie voor aanbod, vertrouwen en contact.</span></div></a>
+          <a class="website-case" href="#website-preview" data-case-url="https://arixconnect.github.io/Soundlab/" data-case-name="Soundlab"><div><small>Muziekstudio</small><strong>Soundlab</strong><span>Van hobbyproject naar professioneel boekbare muziekstudio.</span><b>Bekijk website</b></div></a>
+          <a class="website-case" href="#website-preview" data-case-url="https://masterbarbershop.nl/" data-case-name="Master Barbershop"><img src="assets/masterbarbershop-case.jpg" alt="Master Barbershop Arnhem" width="1400" height="933" loading="lazy"><div><small>Barbershop</small><strong>Master Barbershop</strong><span>Diensten, uitstraling en afspraak maken op één plek.</span><b>Bekijk website</b></div></a>
+          <a class="website-case" href="#website-preview" data-case-url="https://studiekunst.nl/" data-case-name="Studiekunst"><img src="assets/studiekunst-content.jpg" alt="Studiekunst websitecase" width="1080" height="1350" loading="lazy"><div><small>Creatief onderwijs</small><strong>Studiekunst</strong><span>Een overzichtelijke presentatie van het aanbod.</span><b>Bekijk website</b></div></a>
         </div>
-        <p class="slider-note">Doel: hier komen uiteindelijk tien sterke websitecases te staan. Nu tonen we alleen cases die al echt beschikbaar zijn.</p>
+        <section id="website-preview" class="website-preview" aria-labelledby="preview-title" hidden>
+          <div class="preview-toolbar"><h3 id="preview-title" tabindex="-1">Website bekijken</h3><button class="preview-close" type="button" aria-label="Websitepreview sluiten">×</button></div>
+          <div class="preview-body"></div>
+          <div class="preview-footer"><p>Past zo'n website bij jouw bedrijf?</p><a class="button primary" href="https://arixmarketing.setmore.com/">Plan een kennismaking</a></div>
+        </section>
+        <noscript><p>Voor de interactieve websitevoorbeelden is JavaScript nodig.</p></noscript>
       </div>
       <div class="video-shell" id="contentvoorbeelden">
-        <div class="slider-head"><div><p class="eyebrow">Content voorbeelden</p><h2>Korte video's die sfeer, product en actie direct laten zien.</h2><p class="muted">Verticale content in 9:16 voor Reels, Shorts, TikTok en advertenties. De rest van de selectie voegen we toe zodra de links compleet zijn.</p></div><div class="slider-controls"><button class="slider-button" type="button" data-slider-prev onclick="window.scrollContentVideos?.(-1)" aria-label="Vorige video">‹</button><button class="slider-button" type="button" data-slider-next onclick="window.scrollContentVideos?.(1)" aria-label="Volgende video">›</button></div></div>
+        <div class="slider-head"><div><p class="eyebrow">Videoportfolio</p><h2>Jouw verhaal, in beweging.</h2><p class="muted">Van UGC en campagnevideo's tot een logo dat tot leven komt. Content voor je socials, advertenties en website.</p></div><div class="slider-controls"><button class="slider-button" type="button" data-slider-prev onclick="window.scrollContentVideos?.(-1)" aria-label="Vorige video">‹</button><button class="slider-button" type="button" data-slider-next onclick="window.scrollContentVideos?.(1)" aria-label="Volgende video">›</button></div></div>
         <div class="video-slider" data-video-slider>
-          <article class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/pRVYnykQH2I" title="Social video voor Arix Marketing" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-caption"><strong>Social video</strong><br>Snel laten zien wat mensen kunnen verwachten.</div></article>
-          <article class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/M2qi-feGnjo" title="Reels content voor Arix Marketing" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-caption"><strong>Reels content</strong><br>Herkenbare korte content voor bereik en vertrouwen.</div></article>
+          <article class="video-card"><div class="video-frame" data-video-id="iFK-NF54ApQ" data-video-title="UGC voor Quirk"><button type="button" class="video-play">Bekijk UGC voor Quirk</button></div><div class="video-caption"><strong>UGC voor Quirk</strong><p>Productcontent in samenwerking met DaverllyGainz.</p></div></article>
+          <article class="video-card"><div class="video-frame" data-video-id="QPKtIxyg-a0" data-video-title="Week van het Geld met Duoshots"><button type="button" class="video-play">Bekijk campagnevideo</button></div><div class="video-caption"><strong>Week van het Geld</strong><p>Campagnevideo in samenwerking met Duoshots.</p></div></article>
+          <article class="video-card"><div class="video-frame" data-video-id="LTuOvAfr4L8" data-video-title="Soundlab logoanimatie"><button type="button" class="video-play">Bekijk logoanimatie</button></div><div class="video-caption"><strong>Soundlab logoanimatie</strong><p>Een logo in beweging, gemaakt door Arix Marketing met AI.</p></div></article>
+          <article class="video-card"><div class="video-frame" data-video-id="jIT0EoINHaE" data-video-title="Master Barbershop video"><button type="button" class="video-play">Bekijk Master Barbershop</button></div><div class="video-caption"><strong>Master Barbershop</strong><p>Videocontent voor de barbershop.</p></div></article>
+          <article class="video-card"><div class="video-frame" data-video-id="pRVYnykQH2I" data-video-title="Social video"><button type="button" class="video-play">Bekijk social video</button></div><div class="video-caption"><strong>Social video</strong><p>Korte content voor je tijdlijn.</p></div></article>
+          <article class="video-card"><div class="video-frame" data-video-id="M2qi-feGnjo" data-video-title="Reel"><button type="button" class="video-play">Bekijk reel</button></div><div class="video-caption"><strong>Reel</strong><p>Een indruk in een korte video.</p></div></article>
         </div>
       </div>
     </section>
 
     <section id="pakketten" class="section">
-      <div class="section-head"><p class="eyebrow">Maandpakketten</p><h2>Gebouwd voor continuïteit.</h2><p class="muted">Onze maandpakketten zijn bedoeld voor bedrijven die niet iedere maand opnieuw willen bedenken wat ze online moeten doen.</p></div>
+      <div class="section-head"><p class="eyebrow">Maandpakketten</p><h2>Een vast ritme voor jouw zichtbaarheid.</h2><p class="muted">Kies hoeveel content en begeleiding je nodig hebt. Elk pakket bevat community building: aandacht voor je volgers, reacties en gesprekken die helpen om een betrokken publiek op te bouwen.</p></div>
       <div class="price-grid">
-        <article class="price-card"><h3>Starter</h3><div class="price">€850</div><small>per maand · excl. btw</small><ul><li>4 posts + stories</li><li>2 platformen</li><li>1 content shoot per maand</li><li>Maandrapportage</li><li>Basis lokale vindbaarheid</li></ul><a class="button" href="mailto:info@arixmarketing.nl?subject=Starter%20pakket">Bespreek Starter</a></article>
-        <article class="price-card featured"><span class="tag">Meest gekozen</span><h3>Groei</h3><div class="price">€1.750</div><small>per maand · excl. btw</small><ul><li>12 posts + stories</li><li>Tot 4 platformen</li><li>2 content shoots per maand</li><li>Strategie & maandanalyse</li><li>Actief social beheer</li><li>Lokale & online vindbaarheid</li></ul><a class="button" href="mailto:info@arixmarketing.nl?subject=Groei%20pakket">Bespreek Groei</a></article>
-        <article class="price-card"><h3>Expert</h3><div class="price">€3.333</div><small>per maand · excl. btw</small><ul><li>20 posts + stories</li><li>Tot 5 platformen</li><li>4 content shoots per maand</li><li>Contentregie & prioriteit</li><li>Google/lokale zichtbaarheid</li><li>Doorlopende optimalisatie</li></ul><a class="button" href="mailto:info@arixmarketing.nl?subject=Expert%20pakket">Bespreek Expert</a></article>
-        <article class="price-card"><h3>Pakket op maat</h3><div class="price">Op maat</div><small>excl. btw</small><ul><li>Voor afwijkende contentbehoefte</li><li>Combinatie van diensten</li><li>Project of retainer</li><li>Partnerexpertise waar nodig</li><li>Duidelijke scope vooraf</li></ul><a class="button" href="mailto:info@arixmarketing.nl?subject=Pakket%20op%20maat">Vraag voorstel aan</a></article>
+        <article class="price-card featured"><h3>Starter</h3><div class="price">€850</div><small>per maand · excl. btw</small><p>Een vaste basis voor je social media.</p><ul><li>4 posts + stories</li><li>2 platformen</li><li>1 contentshoot per maand</li><li>Community building</li><li>Maandrapportage</li><li>Basis lokale vindbaarheid</li></ul><a class="button" href="https://arixmarketing.setmore.com/">Bespreek Starter</a></article>
+        <article class="price-card"><h3>Groei</h3><div class="price">€1.899</div><small>per maand · excl. btw</small><p>Meer content en actieve begeleiding.</p><ul><li>12 posts + stories</li><li>Tot 4 platformen</li><li>2 contentshoots per maand</li><li>Community building</li><li>Strategie & maandanalyse</li><li>Actief social beheer</li><li>Lokale & online vindbaarheid</li></ul><a class="button" href="https://arixmarketing.setmore.com/">Bespreek Groei</a></article>
+        <article class="price-card"><h3>Expert</h3><div class="price">€3.499</div><small>per maand · excl. btw</small><p>Doorlopende content en optimalisatie.</p><ul><li>20 posts + stories</li><li>Tot 5 platformen</li><li>4 contentshoots per maand</li><li>Community building</li><li>Contentregie & prioriteit</li><li>Google/lokale zichtbaarheid</li><li>Doorlopende optimalisatie</li></ul><a class="button" href="https://arixmarketing.setmore.com/">Bespreek Expert</a></article>
+        <article class="price-card"><h3>Pakket op maat</h3><div class="price">Op maat</div><small>excl. btw</small><p>Een aanpak rond jouw specifieke vraag.</p><ul><li>Voor afwijkende contentbehoefte</li><li>Combinatie van diensten</li><li>Community building</li><li>Project of vaste samenwerking</li><li>Partnerexpertise waar nodig</li><li>Duidelijke afspraken vooraf</li></ul><a class="button" href="https://arixmarketing.setmore.com/">Bespreek jouw wensen</a></article>
       </div>
       <p class="note">Advertentiebudgetten en betaalde ads vallen niet standaard binnen deze pakketten en worden alleen apart ingezet wanneer dat bij het doel past.</p>
     </section>
 
     <section class="section dark">
       <div class="split">
-        <div><p class="eyebrow">2026 → 2031</p><h2>Van Arnhem naar een sterker netwerk.</h2><p class="muted">De kern blijft hetzelfde: bedrijven helpen om consistent zichtbaar te zijn. Eerst bewijzen en verdiepen in Gelderland, daarna gecontroleerd uitbreiden.</p></div>
-        <div class="roadmap-grid"><div><small>2026–2027</small><strong>Arnhem, Nijmegen & Gelderland</strong></div><div><small>2028–2029</small><strong>Schaalbare uitvoering & Caribisch netwerk</strong></div><div><small>2030–2031</small><strong>Landelijk en selectief internationaal</strong></div></div>
+        <div><p class="eyebrow">Samenwerken met Arix</p><h2>Een betrokken partner voor jouw merk.</h2><p class="muted">We leren je bedrijf kennen, komen op locatie en maken content die bij je past. Vanuit Arnhem werken we met ondernemers en een netwerk van creatieve specialisten.</p></div>
+        <div class="roadmap-grid"><div><small>Afstemming</small><strong>Een plan dat past bij je bedrijf</strong></div><div><small>Uitvoering</small><strong>Jouw team en verhaal in beeld</strong></div><div><small>Betrokkenheid</small><strong>Aandacht voor je community</strong></div></div>
       </div>
-      <div class="actions"><a class="button primary" href="/over-ons/">Bekijk missie, visie & netwerk</a></div>
+      <div class="actions"><a class="button secondary" href="/over-ons/">Maak kennis met ons team</a></div>
     </section>
 
     <section id="contact" class="section contact">
-      <div class="contact-panel"><p class="eyebrow">Contact</p><h2>Wil je niet alleen zichtbaar worden, maar zichtbaar blijven?</h2><p>Plan een kennismaking. We kijken eerst naar je bedrijf, doelgroep en huidige zichtbaarheid en bepalen daarna welke aanpak logisch is.</p><div class="actions"><a class="button primary" href="https://arixmarketing.setmore.com/">Plan kennismaking</a><a class="button secondary" href="mailto:info@arixmarketing.nl">Stuur een e-mail</a></div></div>
+      <div class="contact-panel"><p class="eyebrow">Kennismaken</p><h2>Wat wil jij laten zien?</h2><p>Vertel ons over je bedrijf en je plannen. Samen bekijken we welke content, website of aanpak bij jouw volgende stap past.</p><div class="actions"><a class="button primary" href="https://arixmarketing.setmore.com/">Plan een kennismaking</a></div></div>
       <address><strong>Arix Marketing</strong><span>Arnhem, Nederland</span><span>Actief in Arnhem, Nijmegen & Gelderland</span><a href="mailto:info@arixmarketing.nl">info@arixmarketing.nl</a><a href="tel:+31638212543">06 38 21 25 43</a><span>KvK: 82042691</span></address>
     </section>
   </main>
