@@ -72,7 +72,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
   .case{height:370px;min-height:0}.case img{min-height:0}
   .price-grid{grid-template-columns:1fr}.price-card p{min-height:0}.price{font-size:2.5rem}
   .website-case-slider,.video-shell{margin-top:52px}.website-case-head,.slider-head{align-items:stretch}.slider-controls{align-self:flex-end}
-  .website-case-track{grid-auto-columns:92%}.video-slider{grid-auto-columns:100%;gap:16px}
+  .website-case-track{grid-auto-columns:92%}.video-slider{grid-auto-columns:min(100%,360px);gap:16px}
   .video-card{scroll-snap-stop:always}.video-frame{max-height:none}
   .video-caption{padding:16px}.video-caption strong{font-size:1.125rem}
   .slider-controls{align-self:stretch;justify-content:space-between}
