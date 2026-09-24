@@ -92,18 +92,21 @@
       return;
     }
     const frame = document.createElement('iframe');
-    frame.src = `https://www.youtube-nocookie.com/embed/${container.dataset.videoId}?rel=0`;
+    videoContainers.forEach(other => { if (other !== container && other.querySelector('iframe')) resetVideo(other); });
+    frame.src = `https://www.youtube-nocookie.com/embed/${container.dataset.videoId}?rel=0&playsinline=1&autoplay=1`;
     frame.title = container.dataset.videoTitle;
-    frame.allow = 'encrypted-media; picture-in-picture; fullscreen';
+    frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
     frame.allowFullscreen = true;
     frame.referrerPolicy = 'strict-origin-when-cross-origin';
     container.replaceChildren(frame);
+    frame.focus({ preventScroll: true });
   }
   function resetVideo(container) {
     const button = document.createElement('button');
     button.type = 'button';
     button.className = 'video-play';
-    button.textContent = `Bekijk ${container.dataset.videoTitle}`;
+    button.textContent = 'Video afspelen';
+    button.setAttribute('aria-label', `Speel ${container.dataset.videoTitle} af`);
     const poster = document.createElement('img');
     poster.src = `assets/video-${container.dataset.videoId}.jpg`;
     poster.alt = '';
@@ -116,6 +119,37 @@
   }
   const videoContainers = document.querySelectorAll('[data-video-id]');
   videoContainers.forEach(resetVideo);
+  // Move by the actual card spacing, including the mobile breakpoint.
+  const track = document.querySelector('[data-video-slider]');
+  if (track) {
+    const cards = [...track.children];
+    const prev = document.querySelector('[data-slider-prev]');
+    const next = document.querySelector('[data-slider-next]');
+    const position = document.createElement('span');
+    position.className = 'video-position';
+    position.setAttribute('aria-live', 'polite');
+    prev.after(position);
+    track.setAttribute('aria-label', 'Videoportfolio');
+    track.setAttribute('tabindex', '0');
+    const activeIndex = () => cards.reduce((best, card, i) => Math.abs(card.getBoundingClientRect().left - track.getBoundingClientRect().left) < Math.abs(cards[best].getBoundingClientRect().left - track.getBoundingClientRect().left) ? i : best, 0);
+    function update() {
+      position.textContent = `${activeIndex() + 1} / ${cards.length}`;
+      prev.disabled = track.scrollLeft < 2;
+      next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+    }
+    window.scrollContentVideos = direction => {
+      const index = Math.max(0, Math.min(cards.length - 1, activeIndex() + direction));
+      track.scrollBy({left: cards[index].getBoundingClientRect().left - track.getBoundingClientRect().left, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
+    };
+    track.addEventListener('scroll', update, {passive:true});
+    track.addEventListener('keydown', event => {
+      if (event.target !== track || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+      event.preventDefault();
+      window.scrollContentVideos(event.key === 'ArrowRight' ? 1 : -1);
+    });
+    new ResizeObserver(update).observe(track);
+    update();
+  }
   window.ArixCookieConsent?.onChange(consent => {
     if (!consent.marketing) {
       videoContainers.forEach(resetVideo);
