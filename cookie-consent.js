@@ -74,12 +74,17 @@
     });
   }
 
-  function applyConsent(consent) {
+  function applyConsent(consent, newChoice = false) {
     updateGoogleConsent(consent);
     activateDeferredScripts(consent);
     dispatchConsent(consent);
     // Basic consent mode: make no Google requests before analytics consent.
     if (consent.analytics && !tagManagerLoaded) {
+      if (newChoice) {
+        // Start tags from the page head with the newly saved consent applied.
+        window.location.reload();
+        return;
+      }
       tagManagerLoaded = true;
       window.dataLayer.push({ "gtm.start": Date.now(), event: "gtm.js" });
       const script = document.createElement("script");
@@ -196,7 +201,7 @@
 
     if (consent) {
       const saved = writeConsent(consent);
-      applyConsent(saved);
+      applyConsent(saved, true);
       closeBanner(root);
     }
   });
