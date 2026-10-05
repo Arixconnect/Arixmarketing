@@ -1,6 +1,8 @@
 (function () {
   const STORAGE_KEY = "arix_cookie_consent_v1";
   const CONSENT_EVENT = "arix:cookie-consent";
+  const GTM_ID = "GTM-PB2678N9";
+  let tagManagerLoaded = false;
 
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function gtag() {
@@ -76,6 +78,18 @@
     updateGoogleConsent(consent);
     activateDeferredScripts(consent);
     dispatchConsent(consent);
+    // Basic consent mode: make no Google requests before analytics consent.
+    if (consent.analytics && !tagManagerLoaded) {
+      tagManagerLoaded = true;
+      window.dataLayer.push({ "gtm.start": Date.now(), event: "gtm.js" });
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtm.js?id=" + GTM_ID;
+      document.head.appendChild(script);
+    } else if (!consent.analytics && tagManagerLoaded) {
+      // Stop already loaded tags after withdrawal; the saved choice survives.
+      window.location.reload();
+    }
   }
 
   function createBanner() {
