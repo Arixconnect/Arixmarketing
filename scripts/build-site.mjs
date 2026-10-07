@@ -1,12 +1,45 @@
 import {readFile, writeFile, mkdir} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
 import {services, cases} from '../site/content.mjs';
 const root = new URL('../', import.meta.url);
 const origin = 'https://www.arixmarketing.nl';
 const booking = 'https://arixmarketing.setmore.com/';
-const version = 'structure-20260929';
+const version = 'security-20261007';
 const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const read = path => readFile(new URL(path, root), 'utf8');
-async function save(path, html) { await mkdir(new URL('./', new URL(path, root)), {recursive:true}); await writeFile(new URL(path, root), html.replace(/[ \t]+$/gm, '')); }
+// Pages cannot configure response headers. This enforces only meta-supported CSP directives.
+// frame-ancestors, COOP and HSTS must be configured at a controllable hosting/CDN layer.
+function secureHtml(html) {
+  html = html.replace(/<meta\s+http-equiv="Content-Security-Policy"[^>]*>\s*/gi, '');
+  const hashes = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)]
+    .filter(([, attrs, code]) => !/\bsrc\s*=/i.test(attrs) && code.trim())
+    .map(([, , code]) => "'sha256-" + createHash('sha256').update(code).digest('base64') + "'");
+  const policy = [
+    "default-src 'none'",
+    "base-uri 'none'",
+    "object-src 'none'",
+    "script-src 'self' https://www.googletagmanager.com " + [...new Set(hashes)].join(' '),
+    "script-src-attr 'none'",
+    "style-src 'self' 'unsafe-inline'",
+    "img-src 'self' data: https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com",
+    "font-src 'self'",
+    "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com",
+    "frame-src https://www.youtube-nocookie.com https://arixconnect.github.io https://masterbarbershop.nl https://www.masterbarbershop.nl https://studiekunst.nl https://www.studiekunst.nl https://www.googletagmanager.com",
+    "media-src 'self' blob:",
+    "form-action 'self' https://arixmarketing.setmore.com",
+    "upgrade-insecure-requests"
+  ].map(value => value.trim()).join('; ');
+  const meta = `<meta http-equiv="Content-Security-Policy" content="${policy}">`;
+  // Charset remains within the first 1024 bytes; CSP precedes every resource.
+  html = html.replace(/<meta charset="utf-8">\s*/i, '');
+  return html.replace(/(<head[^>]*>)\s*/i, `$1\n<meta charset="utf-8">\n${meta}\n`);
+}
+async function save(path, html) {
+  html = html.replace(/[ \t]+$/gm, '');
+  if (path.endsWith('.html')) html = secureHtml(html);
+  await mkdir(new URL('./', new URL(path, root)), {recursive:true});
+  await writeFile(new URL(path, root), html);
+}
 const nav = [['/','Home'],['/diensten/','Diensten'],['/cases/','Cases'],['/over-ons/','Over ons'],['/contact/','Contact']];
 const button = () => `<a class="site-button" href="${booking}">Plan een kennismaking</a>`;
 function header(path) {
@@ -79,6 +112,7 @@ for (const file of existing) {
   html=html.replace(/>\s+</g,'>\n<');
   await save(file,html); documents.push(path);
 }
+for (const file of ['privacy.html', 'voorwaarden.html', 'annulering-terugbetaling.html']) await save(file, await read(file));
 const redirect = (target,title) => `<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${title} | Arix Marketing</title><link rel="canonical" href="${origin}${target}"><meta http-equiv="refresh" content="0;url=${target}"></head><body><p><a href="${target}">${title}</a></p></body></html>\n`;
 await save('website-campagne/index.html',redirect('/onepage/','Bekijk het onepage-aanbod'));
 await save('studie-case/index.html',redirect('/cases/','Bekijk onze cases'));

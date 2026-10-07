@@ -141,6 +141,8 @@
       const index = Math.max(0, Math.min(cards.length - 1, activeIndex() + direction));
       track.scrollBy({left: cards[index].getBoundingClientRect().left - track.getBoundingClientRect().left, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
     };
+    prev.addEventListener('click', () => window.scrollContentVideos(-1));
+    next.addEventListener('click', () => window.scrollContentVideos(1));
     track.addEventListener('scroll', update, {passive:true});
     track.addEventListener('keydown', event => {
       if (event.target !== track || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;

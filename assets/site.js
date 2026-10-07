@@ -28,5 +28,7 @@
     const track = document.querySelector('[data-website-case-slider]');
     if (track) track.scrollBy({left: direction * ((track.firstElementChild?.getBoundingClientRect().width || 300) + 16), behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
   };
+  document.querySelector('[data-website-prev]')?.addEventListener('click', () => window.scrollWebsiteCases(-1));
+  document.querySelector('[data-website-next]')?.addEventListener('click', () => window.scrollWebsiteCases(1));
   document.querySelector('[data-cookie-settings]')?.addEventListener('click', () => window.ArixCookieConsent?.open());
 })();

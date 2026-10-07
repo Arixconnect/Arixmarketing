@@ -3,6 +3,9 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit, unquote
 import json
+import re
+import hashlib
+import base64
 import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -62,6 +65,22 @@ for file, page in pages.items():
         if not dest.exists(): errors.append(f'{name}: missing {href}')
         elif u.fragment and dest in pages and u.fragment not in pages[dest].ids: errors.append(f'{name}: missing anchor {href}')
     text = file.read_text()
+    policies = re.findall(r'<meta http-equiv="Content-Security-Policy" content="([^"]*)">', text)
+    if len(policies) != 1: errors.append(f'{name}: expected one enforcing meta CSP')
+    else:
+        policy = policies[0]
+        if "script-src-attr 'none'" not in policy or "object-src 'none'" not in policy or "base-uri 'none'" not in policy:
+            errors.append(f'{name}: missing CSP restrictions')
+        script_policy = next((d for d in policy.split(';') if d.strip().startswith('script-src ')), '')
+        if "unsafe-inline" in script_policy or "unsafe-eval" in script_policy:
+            errors.append(f'{name}: unsafe script policy')
+        if text.index('Content-Security-Policy') > text.find('<script') >= 0:
+            errors.append(f'{name}: CSP follows a script')
+        if re.search(r'\son[a-z]+\s*=', text, re.I): errors.append(f'{name}: inline event handler')
+        for attrs, code in re.findall(r'<script\b([^>]*)>([\s\S]*?)</script>', text, re.I):
+            if code.strip() and not re.search(r'\bsrc\s*=', attrs, re.I):
+                digest = base64.b64encode(hashlib.sha256(code.encode()).digest()).decode()
+                if f"'sha256-{digest}'" not in script_policy: errors.append(f'{name}: stale inline script CSP hash')
     if 'Mollie-betaallink nog koppelen' in text or '10.000 kandidaten' in text: errors.append(f'{name}: obsolete claim or placeholder')
 for loc in ET.parse(ROOT / 'sitemap.xml').iter('{http://www.sitemaps.org/schemas/sitemap/0.9}loc'):
     target = ROOT / urlsplit(loc.text).path.lstrip('/') / 'index.html'
