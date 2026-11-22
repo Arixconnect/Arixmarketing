@@ -3,6 +3,7 @@
   const CONSENT_EVENT = "arix:cookie-consent";
   const GTM_ID = "GTM-PB2678N9";
   let tagManagerLoaded = false;
+  let metricoolLoaded = false;
 
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function gtag() {
@@ -74,6 +75,21 @@
     });
   }
 
+  function loadMetricool() {
+    if (metricoolLoaded) return;
+    metricoolLoaded = true;
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = "https://tracker.metricool.com/resources/be.js";
+    script.onload = () => {
+      if (window.beTracker && typeof window.beTracker.t === "function") {
+        window.beTracker.t({ hash: "b5a70d5827d386f9793ee32249f02f32" });
+      }
+    };
+    script.onerror = () => { metricoolLoaded = false; };
+    document.head.appendChild(script);
+  }
+
   function applyConsent(consent, newChoice = false) {
     updateGoogleConsent(consent);
     activateDeferredScripts(consent);
@@ -94,7 +110,9 @@
     } else if (!consent.analytics && tagManagerLoaded) {
       // Stop already loaded tags after withdrawal; the saved choice survives.
       window.location.reload();
+      return;
     }
+    if (consent.analytics) loadMetricool();
   }
 
   function createBanner() {
@@ -108,8 +126,9 @@
         <h2 id="cookie-title">Mogen we cookies gebruiken voor meten en advertenties?</h2>
         <p>
           We gebruiken noodzakelijke cookies om de website goed te laten werken. Met jouw toestemming
-          gebruiken we ook analytische en marketingcookies voor Google, Facebook/Meta, TikTok,
-          Snapchat en Apple/App Store-campagnes. Zonder toestemming plaatsen we deze trackingcookies niet.
+          meten we bezoeken met Metricool en gebruiken we analytische en marketingcookies voor Google,
+          Facebook/Meta, TikTok, Snapchat en Apple/App Store-campagnes. Zonder toestemming starten we
+          deze meting niet en plaatsen we deze trackingcookies niet.
         </p>
         <div class="cookie-consent-actions">
           <button class="cookie-button primary" type="button" data-cookie-action="accept">Alles accepteren</button>
